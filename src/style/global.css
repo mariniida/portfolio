@@ -4,7 +4,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #575656;
+  color: #707070;
   margin-top: 60px;
 }
 
@@ -36,6 +36,11 @@ h2 {
 h3 {
   font-family: "Josefin Sans Light", sans-serif;
   font-size: 2em;
+}
+
+h4{
+  font-family: "Josefin Sans Light", sans-serif;
+  font-size: 1.5em;
 }
 
 .section{

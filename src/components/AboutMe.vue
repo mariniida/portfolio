@@ -14,15 +14,23 @@
 
     <div class="section">
       <h1>Skills</h1>
-      <ol>
+      <ul>
         <li v-for="(skill, index) in skills">
         <h3>{{skill.name}}</h3>
         </li>
-      </ol>
+      </ul>
     </div>
 
     <div class="section">
       <h1>Timeline</h1>
+      <ol>
+        <li v-for="(timelineEvent, index) in timelineEvents">
+          <h4>{{timelineEvent.startDate}}</h4>
+          <h4>{{timelineEvent.endDate}}</h4>
+          <h3>{{timelineEvent.heading}}</h3>
+          <h4>{{timelineEvent.description}}</h4>
+        </li>
+      </ol>
 
     </div>
 
@@ -30,7 +38,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'AboutMe',
   data () {
@@ -51,12 +58,23 @@ export default {
         {name:'InDesign', level:''},
         {name:'XD', level:''},
       ],
-      
+      timelineEvents:[
+        {
+          startDate:'2012 Feb',
+          endDate:'2016 Nov',
+          heading:'Somerset College',
+          description:'',
+        },{
+          startDate:'2017 Feb',
+          endDate:'2019 Dec',
+          heading:'University of Melbourne',
+          description:'Bachelor of Design. Major: Digital Technologies Minor: Graphic Design, Computing',
+        }
+      ]
     }
   }
 }
 </script>
-
 <style>
 
 </style>
