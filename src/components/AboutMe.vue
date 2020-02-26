@@ -1,14 +1,29 @@
 <template>
   <div>
-    <p>I'm Marin Iida. </p>
+    <div class="section flexContainer">
+      <el-image
+      class="flexItem"
+       style="width: 200px; height: 250px"
+       :src="profileImg"
+       :fit="fit"></el-image>
+      <div class="flexItem">
+        <h1>{{profile.tagLine}}</h1>
+        <h3>{{profile.bio}}</h3>
+      </div>
+    </div>
 
     <div class="section">
-      <h2>Skills</h2>
+      <h1>Skills</h1>
       <ol>
         <li v-for="(skill, index) in skills">
-          {{skill.name}}
+        <h3>{{skill.name}}</h3>
         </li>
       </ol>
+    </div>
+
+    <div class="section">
+      <h1>Timeline</h1>
+
     </div>
 
   </div>
@@ -20,6 +35,11 @@ export default {
   name: 'AboutMe',
   data () {
     return {
+      profile:{
+        tagLine:"I'm Marin Iida.",
+        bio:"An aspiring UI/UX designer based in Japan."
+      },
+      profileImg: require("../assets/IMG_2338.jpg"),
       skills:[
         {name:'HTML',level:''},
         {name:'CSS', level:''},
@@ -30,13 +50,13 @@ export default {
         {name:'Illustrator', level:''},
         {name:'InDesign', level:''},
         {name:'XD', level:''},
-      ]
+      ],
+      
     }
   }
 }
 </script>
 
 <style>
-
 
 </style>
