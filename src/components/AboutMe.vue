@@ -13,25 +13,34 @@
     </div>
 
     <div class="section">
+      <h1>Timeline</h1>
+        <li v-for="(timelineEvent, index) in timelineEvents"
+        class="flexContainer">
+          <div class="flexItem left">
+            <h4 class=lineButtom>{{timelineEvent.startDate}}</h4>
+            <h4>{{timelineEvent.endDate}}</h4>
+          </div>
+
+          <div class="flexItem right">
+            <h3>{{timelineEvent.heading}}</h3>
+
+            <div class="paragraph">
+              <h4>{{timelineEvent.subHeading}}</h4>
+              <p>{{timelineEvent.description}}</p>
+            </div>
+
+          </div>
+        </li>
+
+    </div>
+
+    <div class="section">
       <h1>Skills</h1>
       <ul>
         <li v-for="(skill, index) in skills">
         <h3>{{skill.name}}</h3>
         </li>
       </ul>
-    </div>
-
-    <div class="section">
-      <h1>Timeline</h1>
-      <ol>
-        <li v-for="(timelineEvent, index) in timelineEvents">
-          <h4>{{timelineEvent.startDate}}</h4>
-          <h4>{{timelineEvent.endDate}}</h4>
-          <h3>{{timelineEvent.heading}}</h3>
-          <h4>{{timelineEvent.description}}</h4>
-        </li>
-      </ol>
-
     </div>
 
   </div>
@@ -63,18 +72,52 @@ export default {
           startDate:'2012 Feb',
           endDate:'2016 Nov',
           heading:'Somerset College',
-          description:'',
         },{
           startDate:'2017 Feb',
           endDate:'2019 Dec',
           heading:'University of Melbourne',
-          description:'Bachelor of Design. Major: Digital Technologies Minor: Graphic Design, Computing',
+          subHeading:'Bachelor of Design',
+          description:'Major: Digital Technologies. Minor: Graphic Design, Computing.',
         }
       ]
     }
   }
 }
 </script>
+
 <style>
+.lineButtom{
+  position: relative;
+  display: inline-block;
+  height: 70px;
+  line-height: 70px;
+}
+
+.lineButtom::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 20px;
+  margin: auto;
+  background-color: #707070;
+}
+
+.paragraph{
+  padding-left: 18px;
+  padding-top: 8px;
+}
+
+.right{
+  flex-basis: 300px;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.left{
+  flex-basis: 150px;
+}
 
 </style>

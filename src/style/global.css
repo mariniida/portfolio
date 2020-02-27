@@ -5,7 +5,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #707070;
-  margin-top: 60px;
 }
 
 
@@ -14,10 +13,12 @@
   justify-content: center;
   align-self: center;
   align-items: center;
+  align-content: center;
 }
 
 .flexItem{
-  margin: 2%;
+  margin: 10px 0px;
+
 }
 
 /* font sizes */
@@ -27,20 +28,30 @@ html {
 
 h1 {
   font-size: 3.5em;
+  margin: 10px 0px;
 }
 
 h2 {
   font-size: 2em;
+  margin: 10px 0px;
 }
 
 h3 {
   font-family: "Josefin Sans Light", sans-serif;
   font-size: 2em;
+  margin: 0px;
 }
 
 h4{
   font-family: "Josefin Sans Light", sans-serif;
   font-size: 1.5em;
+  margin: 4px 0px;
+}
+
+p{
+  font-family: "Josefin Sans Light", sans-serif;
+  font-size: 1.5em;
+  margin: 2px;
 }
 
 .section{
