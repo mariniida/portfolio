@@ -1,14 +1,12 @@
 <template>
-  <div>
+  <div class="page">
     <h1>Talk to me</h1>
 
   <div class="section">
     <h2>Links</h2>
-    <ol>
       <li v-for="(link, index) in links">
         {{link.name}}
       </li>
-    </ol>
 
   </div>
 

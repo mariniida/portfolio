@@ -7,6 +7,9 @@
   color: #707070;
 }
 
+.page{
+  padding: 20px;
+}
 
 .flexContainer {
   display: flex;
@@ -17,8 +20,7 @@
 }
 
 .flexItem{
-  margin: 10px 0px;
-
+  margin: 10px;
 }
 
 /* font sizes */

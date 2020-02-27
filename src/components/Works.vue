@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <li v-for="(workType, index) in workTypes">
       <h3>{{workType}}</h3>
     </li>
