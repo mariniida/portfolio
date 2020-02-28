@@ -59,3 +59,7 @@ p{
 .section{
   margin: 80px 0px;
 }
+
+ul{
+  list-style: none;
+}

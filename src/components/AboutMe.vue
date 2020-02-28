@@ -31,9 +31,14 @@
 
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
-        <li v-for="(skill, index) in skills">
-          <h3>{{skill.name}}</h3>
+      <ul class="flexContainer">
+        <li v-for="(skill, index) in skills" class="flexItem tile">
+
+            <h3>{{skill.name}}</h3>
+            <i class="icon el-icon-reading"></i>
+
         </li>
+      </ul>
     </div>
 
   </div>
@@ -51,15 +56,15 @@ export default {
       },
       profileImg: require("../assets/IMG_2338.jpg"),
       skills:[
-        {name:'HTML',level:''},
-        {name:'CSS', level:''},
-        {name:'JavaScript', level:''},
-        {name:'English', level:''},
-        {name:'Japanese', level:''},
-        {name:'Photoshop', level:''},
-        {name:'Illustrator', level:''},
-        {name:'InDesign', level:''},
-        {name:'XD', level:''},
+        {name: 'Adobe Photoshop', level: 2},
+        {name: 'Adobe Illustrator', level: 3},
+        {name: 'Adobe InDesign', level: 2},
+        {name: 'Adobe XD', level: 4},
+        {name: 'JavaScript', level: 2},
+        {name: 'HTML',level: 3},
+        {name: 'CSS', level: 3},
+        {name: 'English', level: 4},
+        {name: 'Japanese', level: 5},
       ],
       timelineEvents:[
         {
@@ -113,5 +118,15 @@ export default {
 .left{
   flex-basis: 150px;
 }
+
+.tile{
+  flex-wrap:wrap;
+  
+}
+
+.el-icon-reading{
+  font-size: 1.5em;
+}
+
 
 </style>
