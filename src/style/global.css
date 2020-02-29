@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700&display=swap');
 
 #app {
   font-family: 'Josefin Sans', sans-serif;
@@ -23,35 +24,48 @@
   margin: 10px;
 }
 
+/* colours */
+
+
+
+
 /* font sizes */
 html {
   font-size: 62.5%;
 }
 
 h1 {
+  font-weight: 600;
   font-size: 3.5em;
   margin: 10px 0px;
 }
 
 h2 {
+  font-weight: 400;
   font-size: 2em;
   margin: 10px 0px;
 }
 
 h3 {
-  font-family: "Josefin Sans Light", sans-serif;
+  font-weight: 300;
   font-size: 2em;
   margin: 0px;
 }
 
 h4{
-  font-family: "Josefin Sans Light", sans-serif;
+  font-weight: 400;
   font-size: 1.5em;
   margin: 4px 0px;
 }
 
+h5{
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 2px;
+}
+
 p{
-  font-family: "Josefin Sans Light", sans-serif;
+  font-weight: 300;
   font-size: 1.5em;
   margin: 2px;
 }

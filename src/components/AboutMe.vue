@@ -16,11 +16,11 @@
         <li v-for="(timelineEvent, index) in timelineEvents"
         class="flexContainer">
           <div class="flexItem left">
-            <h4 class=lineButtom>{{timelineEvent.startDate}}</h4>
-            <h4>{{timelineEvent.endDate}}</h4>
+            <h5 class=lineButtom>{{timelineEvent.startDate}}</h5>
+            <h5>{{timelineEvent.endDate}}</h5>
           </div>
           <div class="flexItem right">
-            <h3>{{timelineEvent.heading}}</h3>
+            <h2>{{timelineEvent.heading}}</h2>
             <div class="paragraph">
               <h4>{{timelineEvent.subHeading}}</h4>
               <p>{{timelineEvent.description}}</p>
@@ -31,16 +31,20 @@
 
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
-      <ul class="flexContainer">
-        <li v-for="(skill, index) in skills" class="flexItem tile">
-
-            <h3>{{skill.name}}</h3>
-            <i class="icon el-icon-reading"></i>
-
+      <ul class="flexContainer tileContainer halfContainer">
+        <li v-for="(skill, index) in skills" class="flexItem tileItem">
+            <h3 class="inline">{{skill.name}}</h3>
+            <div class="inline">
+              <div class="inline" v-for="n in skill.level">
+                <div class="darkSquare"/>
+              </div>
+              <div class="inline" v-for="n in 5-skill.level">
+                <div class="lightSquare"/>
+              </div>
+          </div>
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 
@@ -55,17 +59,6 @@ export default {
         img: require("../assets/IMG_2338.jpg"),
       },
       profileImg: require("../assets/IMG_2338.jpg"),
-      skills:[
-        {name: 'Adobe Photoshop', level: 2},
-        {name: 'Adobe Illustrator', level: 3},
-        {name: 'Adobe InDesign', level: 2},
-        {name: 'Adobe XD', level: 4},
-        {name: 'JavaScript', level: 2},
-        {name: 'HTML',level: 3},
-        {name: 'CSS', level: 3},
-        {name: 'English', level: 4},
-        {name: 'Japanese', level: 5},
-      ],
       timelineEvents:[
         {
           startDate:'2012 Feb',
@@ -78,10 +71,22 @@ export default {
           subHeading:'Bachelor of Design',
           description:'Major: Digital Technologies. Minor: Graphic Design, Computing.',
         }
-      ]
+      ],
+      skills:[
+        {name: 'Mictrosoft Office Suite', level: 3},
+        {name: 'Japanese', level: 5},
+        {name: 'Adobe Photoshop', level: 2},
+        {name: 'English', level: 4},
+        {name: 'Adobe Illustrator', level: 3},
+        {name: 'HTML',level: 3},
+        {name: 'Adobe InDesign', level: 2},
+        {name: 'CSS', level: 3},
+        {name: 'Adobe XD', level: 4},
+        {name: 'JavaScript', level: 2},
+      ],
     }
-  }
-}
+  },
+    }
 </script>
 
 <style>
@@ -119,14 +124,39 @@ export default {
   flex-basis: 150px;
 }
 
-.tile{
-  flex-wrap:wrap;
-  
+.tileContainer{
+  flex-wrap: wrap;
+  padding: 0px;
+  justify-content:space-between;
 }
 
-.el-icon-reading{
-  font-size: 1.5em;
+.halfContainer{
+  width: 90%;
+  margin: 0 auto;
 }
 
+.tileItem{
+  align-self: center;
+  text-align: right;
+  width: 60%;
+}
 
+.inline{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.darkSquare{
+  background-color: #494CA2;
+  height: 1.75em;
+  width: 1.75em;
+  margin: 5px;
+}
+
+.lightSquare{
+  background-color: #E3E7F1;
+  height: 1.75em;
+  width: 1.75em;
+  margin: 5px;
+}
 </style>
