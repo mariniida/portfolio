@@ -1,20 +1,19 @@
 <template>
   <div>
-    <NavBar/>
+    <h1>Hello there</h1>
   </div>
 </template>
 
 <script>
-import NavBar from './NavBar.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'LP',
   data () {
     return {
     }
   },
   components:{
-    NavBar
+
   }
 }
 </script>

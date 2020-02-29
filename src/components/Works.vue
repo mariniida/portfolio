@@ -1,8 +1,9 @@
 <template>
-  <div>
-    <h1>
-      hi
-    </h1>
+  <div class="page">
+    <li v-for="(workType, index) in workTypes">
+      <h3>{{workType}}</h3>
+    </li>
+
   </div>
 </template>
 
@@ -12,6 +13,7 @@ export default {
   name: 'Works',
   data () {
     return {
+      workTypes:['All','Graphics','UI/UX','Branding']
     }
   }
 }
