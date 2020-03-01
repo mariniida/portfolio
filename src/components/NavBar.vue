@@ -1,5 +1,8 @@
 <template>
-  <el-menu :default-active="activeIndex" mode="horizontal"  router="true">
+  <el-menu
+  mode="horizontal"
+  :router="true"
+  active-text-color="#2B2D62">
   <el-menu-item index="LandingPage">icon</el-menu-item>
   <el-menu-item index="Works">Works</el-menu-item>
   <el-menu-item index="Contact">Contact</el-menu-item>
@@ -13,10 +16,12 @@ export default {
   name: 'NavBar',
   data () {
     return {
+      activeColor: "var(--Gradient5)",
     }
   }
 }
 </script>
 <style>
+
 
 </style>

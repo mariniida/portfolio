@@ -1,16 +1,16 @@
 <template>
   <div class="page">
     <div class="section flexContainer"> <!--Profile section-->
-      <el-image
-      class="flexItem"
+      <el-image class="flexItem"
        style="width: 200px; height: 250px"
-       :src="profile.img"
-       :fit="fit"></el-image>
+       :src="profile.img" fit="fit"></el-image>
+
       <div class="flexItem">
         <h1>{{profile.tagLine}}</h1>
         <h3>{{profile.bio}}</h3>
       </div>
     </div>
+
     <div class="section"> <!--Timeline section-->
       <h1>Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"
@@ -28,10 +28,9 @@
           </div>
         </li>
     </div>
-
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
-      <ul class="flexContainer tileContainer halfContainer">
+      <ul class="flexContainer tileContainer">
         <li v-for="(skill, index) in skills" class="flexItem tileItem">
             <h3 class="inline">{{skill.name}}</h3>
             <div class="inline">
@@ -130,10 +129,6 @@ export default {
   justify-content:space-between;
 }
 
-.halfContainer{
-  width: 90%;
-  margin: 0 auto;
-}
 
 .tileItem{
   align-self: center;

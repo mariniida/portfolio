@@ -18,6 +18,7 @@
   align-self: center;
   align-items: center;
   align-content: center;
+  width: 100%;
 }
 
 .flexItem{
@@ -25,7 +26,15 @@
 }
 
 /* colours */
-
+/*might use sass later*/
+:root{
+  --white:#FFFFFF;
+  --Gradient1:#E3E7F1;
+  --Gradient2:#C6CBEF;
+  --Gradient3:#8186D5;
+  --Gradient4:#494CA2;
+  --Gradient5:#2B2D62;
+}
 
 
 
@@ -37,7 +46,7 @@ html {
 h1 {
   font-weight: 600;
   font-size: 3.5em;
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 
 h2 {
@@ -76,4 +85,18 @@ p{
 
 ul{
   list-style: none;
+}
+
+.el-button{
+  font-family: inherit;
+  background-color: white;
+  border-color: #2B2D62;
+  color: #2B2D62;
+}
+
+.el-button:hover{
+  font-family: inherit;
+  background-color: #2B2D62;
+  border-color: #2B2D62;
+  color: white;
 }
