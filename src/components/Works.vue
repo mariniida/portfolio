@@ -1,14 +1,18 @@
 <template>
   <div class="page">
-    <li v-for="(workType, index) in workTypes">
-      <h3>{{workType}}</h3>
-    </li>
+    <el-tabs v-model="activeName"
+    tabPosition="left">
+      <el-tab-pane
+        v-for="(workType, index) in workTypes"
+        :key="index"
+        :label="workType"
+        :name="workType">{{workType}}</el-tab-pane>
 
+      </el-tabs>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'Works',
   data () {
