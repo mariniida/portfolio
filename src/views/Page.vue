@@ -1,19 +1,25 @@
 <template>
-  <div class="wrapper">
-    <prismic-edit-button :documentId="documentId"/>
-    <h1 class="title">
-      {{ $prismic.richTextAsPlain(fields.title) }}
-    </h1>
-    <prismic-rich-text :field="fields.description" class="description"/>
+  <div class="page">
+  <h1> yay</h1>
+  <h1 class="title">
+    {{ $prismic.richTextAsPlain(fields.title) }}
+  </h1>
+  <prismic-rich-text :field="fields.description" class="description"/>
+  <!--<div class="wrapper">
+
+
     <div class="cta-wrapper">
       <prismic-link :field="fields.ctaLink" class="cta">
         {{ $prismic.richTextAsPlain(fields.ctaText) }}
       </prismic-link>
     </div>
+
     <div class="icon-wrapper">
       <prismic-image :field="fields.icon" class="icon"/>
     </div>
   </div>
+-->
+</div>
 </template>
 
 <script>
@@ -58,7 +64,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .wrapper {
   max-width: 820px;
   margin-left: auto;

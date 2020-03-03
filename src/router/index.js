@@ -12,7 +12,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/Landing',
       name: 'LandingPage',
       component: LP
     },

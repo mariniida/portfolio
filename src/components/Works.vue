@@ -1,7 +1,6 @@
 <template>
   <div class="page">
-    <el-tabs v-model="activeName"
-    tabPosition="top">
+    <el-tabs     tabPosition="top">
       <el-tab-pane
         v-for="(workType, index) in workTypes"
         :key="index"
