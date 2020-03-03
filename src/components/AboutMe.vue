@@ -30,8 +30,8 @@
     </div>
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
-      <ul class="flexContainer tileContainer">
-        <li v-for="(skill, index) in skills" class="flexItem tileItem">
+      <ul class="flexContainer tileContainer skillContianer">
+        <li v-for="(skill, index) in skills" class="flexItem skillItem">
             <h3 class="inline">{{skill.name}}</h3>
             <div class="inline">
               <div class="inline" v-for="n in skill.level">
@@ -88,7 +88,7 @@ export default {
     }
 </script>
 
-<style>
+<style scoped>
 .lineButtom{
   position: relative;
   display: inline-block;
