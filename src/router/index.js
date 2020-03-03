@@ -5,6 +5,8 @@ import Works from '@/components/Works'
 import AboutMe from '@/components/AboutMe'
 import Contact from '@/components/Contact'
 
+import Page from '@/views/Page'
+
 Vue.use(Router)
 
 export default new Router({
@@ -28,6 +30,11 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
-    }
+    },
+    {
+    path: '/page/:uid',
+    name: 'page',
+    component: Page
+  },
   ]
 })

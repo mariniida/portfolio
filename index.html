@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>portfolio</title>
+    <title>Marin</title>
+    <meta name="description" content="Vue.js portfolio website  with content managed in Prismic">
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/prismic-vue"></script>
+    <script>
+      window.prismic = {
+        endpoint: 'https://myPortfolioWebsite.prismic.io/api/v2'
+      }
+    </script>
+    <script src="https://static.cdn.prismic.io/prismic.min.js"></script>
+
   </head>
   <body>
+    <noscript>
+    <strong>We're sorry but this project doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
