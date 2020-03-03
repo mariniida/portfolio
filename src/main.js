@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import PrismicVue from 'prismic-vue';
 import linkResolver from './link-resolver';
 
-const accessToken = 'MC5YbDRXWHhJQUFDQUFScG1f.Au-_vS3vv73vv71LB--_ve-_ve-_ve-_ve-_ve-_ve-_ve-_ve-_vQnvv73vv73vv71a77-977-9dAcPRu-_ve-_ve-_ve-_ve-_vQ';
+const accessToken = 'MC5YbDVLQ3hJQUFDSUFObXlK.FwsU77-9Ae-_vRfvv71xYe-_vVplYu-_vRPvv70z77-9DmLvv70577-9Z3dE77-977-9YD17';
 
 Vue.use(ElementUI,{
   locale

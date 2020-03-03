@@ -6,10 +6,12 @@ import AboutMe from '@/components/AboutMe'
 import Contact from '@/components/Contact'
 
 import Page from '@/views/Page'
+import Work from '@/views/Work'
 
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [
     {
       path: '/Landing',
@@ -32,9 +34,14 @@ export default new Router({
       component: Contact
     },
     {
-    path: '/page/:uid',
-    name: 'page',
-    component: Page
-  },
+      path: '/page/:uid',
+      name: 'page',
+      component: Page
+    },
+    {
+      path: '/work/:uid',
+      name: 'work',
+      component: Work
+  }
   ]
 })

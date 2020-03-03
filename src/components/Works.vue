@@ -23,7 +23,6 @@
                 </div>
             </a>
           </div>
-
       </div>
 
 
@@ -60,6 +59,7 @@ export default {
     }
   }
 }
+
 </script>
 
 <style>

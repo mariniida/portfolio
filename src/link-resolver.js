@@ -9,6 +9,10 @@ export default function (doc) {
     return '/page/' + doc.uid;
   }
 
+  if (doc.type === 'work') {
+    return '/work/' + doc.uid;
+  }
+
   // Default to the root
   return '/';
 };

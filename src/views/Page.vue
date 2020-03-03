@@ -1,10 +1,10 @@
 <template>
   <div class="page">
-  <h1> yay</h1>
-  <h1 class="title">
-    {{ $prismic.richTextAsPlain(fields.title) }}
-  </h1>
-  <prismic-rich-text :field="fields.description" class="description"/>
+    <h1> yay</h1>
+    <h1 class="title">
+      {{ $prismic.richTextAsPlain(fields.title) }}
+    </h1>
+    <prismic-rich-text :field="fields.description" class="description"/>
   <!--<div class="wrapper">
 
 
@@ -55,11 +55,11 @@ export default {
     }
   },
   created () {
-    this.getContent(this.$route.params.uid)
+    this.getContent(this.$route.params.uid);
   },
   beforeRouteUpdate (to, from, next) {
-    this.getContent(to.params.uid)
-    next()
+    this.getContent(to.params.uid);
+    next();
   }
 }
 </script>
