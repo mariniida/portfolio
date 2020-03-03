@@ -1,53 +1,18 @@
 <template>
   <div class="page">
-    <h1>ind works</h1>
+    <h1 :style="{ color: work.themeColor }">
+      {{ $prismic.richTextAsPlain(work.title) }}</h1>
+    <h2>{{work.themeColor}}</h2>
 
+    <h3>{{work.title}}</h3>
+    <h1>{{work.title.text}}</h1>
+    <prismic-image
+    style="width: 100%; height: auto" :field="work.thumbnail"/>
 
-
-  <!--<div class="wrapper">
-<prismic-rich-text :field="fields.description" class="description"/>
-
-    <div class="cta-wrapper">
-      <prismic-link :field="fields.ctaLink" class="cta">
-        {{ $prismic.richTextAsPlain(fields.ctaText) }}
-      </prismic-link>
-    </div>
-
-    <div class="icon-wrapper">
-      <prismic-image :field="fields.icon" class="icon"/>
-    </div>
-  </div>
-  uid
-  title
-  tool
-  thumbnail(img)
-  tag
-  themeColor
-  imagegallery
-  text
-
-  <section v-for="(slice, index) in slices" :key="'slice-' + index">
-
-  <template v-if="slice.slice_type === 'description'">
-
-    <prismic-rich-text :field="slice.primary.rich_text"/>
-
-  </template>
-
-  <template v-else-if="slice.slice_type === 'photo_gallery'">
-
-    <prismic-rich-text :field="slice.primary.title"/>
-
-    <template v-for="(item, index) in slice.items">
-
-      <prismic-image :field="item.image" :key="'photo-item-' + index"/>
-
-    </template>
-
-  </template>
-
-</section>
--->
+    <el-image
+      style="width: 100px; height: 100px"
+      :src="work.thumbnail.u"
+      :fit="fit"></el-image>
 </div>
 </template>
 
