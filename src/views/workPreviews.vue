@@ -8,9 +8,11 @@
         :name="workType">{{workType}}</el-tab-pane>
       </el-tabs>
 
-    <div v-if="works.length !== 0">
-      <div class="section flexContainer tileContainer">
-          <div class="thumbnail flexItem" v-for="(work, index) in works">
+      <div v-loading="loading" class="section flexContainer tileContainer">
+          <div class="thumbnail flexItem" v-for="(work, index) in works" >
+
+            <router-link :to="linkResolver(work)">
+
               <div class="thumbnail-overlay"></div>
                 <img class="thumbnail-image"
                 style="width: 300px; height: 300px"
@@ -19,14 +21,10 @@
                   <h4>{{$prismic.richTextAsPlain(work.data.title)}}</h4>
                   <p>{{work.data.tag}}</p>
                 </div>
-            </a>
+            </router-link>
+
           </div>
       </div>
-    </div>
-    <div v-else >
-      <h1>No works have submitted.</h1>
-    </div>
-
   </div>
 </template>
 
@@ -40,6 +38,8 @@ export default {
       ],
       documentId: '',
       works: [],
+      loading: true,
+      linkResolver: this.$prismic.linkResolver
     }
   },
   methods: {
@@ -49,6 +49,7 @@ export default {
         { orderings : '[document.first_publication_date]'}
         ).then((response) => {
           this.works = response.results;
+          this.loading=false;
         });
     },
   },

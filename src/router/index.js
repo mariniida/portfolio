@@ -34,12 +34,12 @@ export default new Router({
       component: Page
     },
     {
-      path: '/works',
+      path: '/work',
       name: 'Works',
       component: Works
     },
     {
-      path: '/works/:uid',
+      path: '/work/:uid',
       name: 'work',
       component: Work
   }
