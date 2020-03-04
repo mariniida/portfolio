@@ -6,12 +6,11 @@
         :src="work.thumbnail.url"
         :fit="contain"></el-image>
     </div>
-
     <slices-block :slices="work.slices"/>
     <p class="themeColor">{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
-
     <div class="section description">
-      <p>{{$prismic.richTextAsPlain(work.description)}}</p>
+      <prismic-rich-text :field="work.description"/>
+      <!-- <p>{{$prismic.richTextAsPlain(work.description)}}</p>-->
     </div>
 </div>
 </template>
