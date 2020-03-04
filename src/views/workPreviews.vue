@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <el-tabs     tabPosition="top">
+    <el-tabs  tabPosition="top">
       <el-tab-pane
         v-for="(workType, index) in workTypes"
         :key="index"
@@ -8,23 +8,24 @@
         :name="workType">{{workType}}</el-tab-pane>
       </el-tabs>
 
+    <div v-if="works.length !== 0">
       <div class="section flexContainer tileContainer">
-
           <div class="thumbnail flexItem" v-for="(work, index) in works">
-            <a href="https://unsplash.com/photos/HkTMcmlMOUQ" target="_blank">
               <div class="thumbnail-overlay"></div>
                 <img class="thumbnail-image"
-                style="width: 200px; height: 200px" :src="work.thumbnail">
+                style="width: 300px; height: 300px"
+                :src="work.data.thumbnail.url">
                 <div class="thumbnail-details fadeIn-top">
-                  <h4>{{work.title}}</h4>
-                  <div v-for="(tag, index) in work.tag">
-                    <p>{{tag}}</p>
-                  </div>
+                  <h4>{{$prismic.richTextAsPlain(work.data.title)}}</h4>
+                  <p>{{work.data.tag}}</p>
                 </div>
             </a>
           </div>
       </div>
-
+    </div>
+    <div v-else >
+      <h1>No works have submitted.</h1>
+    </div>
 
   </div>
 </template>
@@ -37,26 +38,22 @@ export default {
       workTypes:[
         'All','Graphics','UI/UX','Branding'
       ],
-      works: [
-        {title: "brandingwork",
-          tag: ["Branding","Typography"],
-          thumbnail:"https://images.unsplash.com/photo-1583138320337-a47316bc2b86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-        },
-        {title: "ui/uxwork",
-          tag: ["UI/UX",],
-            thumbnail:"https://images.unsplash.com/photo-1583124688221-728de3b79b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80",
-        },
-        {title: "brandingwork",
-          tag: ["Branding","Typography"],
-          thumbnail:"https://images.unsplash.com/photo-1583138320337-a47316bc2b86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
-        },
-        {title: "ui/uxwork",
-          tag: ["UI/UX",],
-            thumbnail:"https://images.unsplash.com/photo-1583124688221-728de3b79b09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80",
-        },
-      ]
-
+      documentId: '',
+      works: [],
     }
+  },
+  methods: {
+    getAllWorks() {
+      this.$prismic.client.query(
+        this.$prismic.Predicates.at('document.type', 'work'),
+        { orderings : '[document.first_publication_date]'}
+        ).then((response) => {
+          this.works = response.results;
+        });
+    },
+  },
+  created () {
+    this.getAllWorks();
   }
 }
 
@@ -66,11 +63,6 @@ export default {
 
 .thumbnail {
   position: relative;
-  /*
-  width: 30%;
-  max-width: 50%;
-  margin: auto;
-  */
   overflow: hidden;
 }
 
@@ -95,6 +87,7 @@ export default {
 
 .thumbnail-image{
   width: 100%;
+  object-fit: contain
 }
 
 .thumbnail-details {
@@ -134,6 +127,5 @@ export default {
 .fadeIn-top{
   top: 20%;
 }
-
 
 </style>

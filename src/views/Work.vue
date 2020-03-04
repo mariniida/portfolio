@@ -1,24 +1,29 @@
 <template>
   <div class="page">
-    <h1 :style="{ color: work.themeColor }">
-      {{ $prismic.richTextAsPlain(work.title) }}</h1>
-    <h2>{{work.themeColor}}</h2>
+    <div class="workLP">
+      <h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
+      <el-image
+        :src="work.thumbnail.url"
+        :fit="contain"></el-image>
+    </div>
 
-    <h3>{{work.title}}</h3>
-    <h1>{{work.title.text}}</h1>
-    <prismic-image
-    style="width: 100%; height: auto" :field="work.thumbnail"/>
+    <slices-block :slices="work.slices"/>
+    <p class="themeColor">{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
 
-    <el-image
-      style="width: 100px; height: 100px"
-      :src="work.thumbnail.u"
-      :fit="fit"></el-image>
+    <div class="section description">
+      <p>{{$prismic.richTextAsPlain(work.description)}}</p>
+    </div>
 </div>
 </template>
 
 <script>
+import SlicesBlock from '../components/SlicesBlock.vue'
+
 export default {
   name: 'Work',
+  components:{
+    SlicesBlock,
+  },
   data () {
     return {
       documentId: '',
@@ -28,7 +33,6 @@ export default {
         tool:null,
         thumbnail:null,
         tag:null,
-        themeColor:null,
         description:null,
         slices:[],
       },
@@ -41,12 +45,11 @@ export default {
         if (document) {
           this.documentId = document.id
           this.work.title = document.data.title
-          this.work.themeColor = document.data.themeColor
-          this.work.tool=document.data.tool
-          this.work.thumbnail=document.data.thumbnail
-          this.work.tag=document.data.tag
+          this.work.tool = document.data.tool
+          this.work.thumbnail = document.data.thumbnail
+          this.work.tag = document.data.tag
           this.work.description = document.data.description
-          this.work.slices=documnt.data.body
+          this.work.slices = document.data.body
 
         } else {
           this.$router.push({ name: 'not-found' })
@@ -65,5 +68,16 @@ export default {
 </script>
 
 <style scoped>
+
+.workLP {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.description {
+  margin: 0 auto;
+  padding: 20px;
+  width: 80%;
+}
 
 </style>

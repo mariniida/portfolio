@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import LP from '@/components/LP'
-import Works from '@/components/Works'
-import AboutMe from '@/components/AboutMe'
-import Contact from '@/components/Contact'
 
+import LP from '@/views/LP'
+import AboutMe from '@/views/AboutMe'
+import Contact from '@/views/Contact'
 import Page from '@/views/Page'
 import Work from '@/views/Work'
+import Works from '@/views/workPreviews'
 
 Vue.use(Router)
 
@@ -17,11 +17,6 @@ export default new Router({
       path: '/Landing',
       name: 'LandingPage',
       component: LP
-    },
-    {
-      path: '/works',
-      name: 'Works',
-      component: Works
     },
     {
       path: '/aboutme',
@@ -39,7 +34,12 @@ export default new Router({
       component: Page
     },
     {
-      path: '/work/:uid',
+      path: '/works',
+      name: 'Works',
+      component: Works
+    },
+    {
+      path: '/works/:uid',
       name: 'work',
       component: Work
   }

@@ -21,7 +21,7 @@
           </div>
           <div class="flexItem right">
             <h2>{{timelineEvent.heading}}</h2>
-            <div class="paragraph">
+            <div class="event">
               <h4>{{timelineEvent.subHeading}}</h4>
               <p>{{timelineEvent.description}}</p>
             </div>
@@ -108,7 +108,7 @@ export default {
   background-color: #707070;
 }
 
-.paragraph{
+.event{
   padding-left: 18px;
   padding-top: 8px;
 }
@@ -124,11 +124,9 @@ export default {
 }
 
 .tileContainer{
-  flex-wrap: wrap;
   padding: 0px;
   justify-content:space-between;
 }
-
 
 .tileItem{
   align-self: center;

@@ -9,41 +9,53 @@
   color: #707070;
 }
 
-.page{
+.page {
   padding: 20px;
+  margin-bottom: 30px;
 }
 
+.section {
+  margin: 80px 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+/* flexBox */
 .flexContainer {
   display: flex;
   justify-content: center;
   align-self: center;
   align-items: center;
   align-content: center;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.flexItem{
+.flexItem {
   margin: 10px;
 }
 
-.tileContainer{
+.tileContainer {
   flex-wrap:wrap;
 }
 
-.skillContianer{
+.skillContianer {
   padding: 0px;
   justify-content:space-between;
 }
 
-.skillItem{
+.skillItem {
   align-self: center;
   text-align: right;
   width: 60%;
 }
 
+
 /* colours */
 /*might use sass later*/
-:root{
+:root {
   --white:#FFFFFF;
   --Gradient1:#E3E7F1;
   --Gradient2:#C6CBEF;
@@ -51,7 +63,6 @@
   --Gradient4:#494CA2;
   --Gradient5:#2B2D62;
 }
-
 
 
 /* font sizes */
@@ -89,30 +100,37 @@ h5{
   margin: 2px;
 }
 
-p{
+p {
   font-weight: 300;
   font-size: 1.5em;
   margin: 2px;
 }
 
-.section{
-  margin: 80px 0px;
+el-divider{
+  font-weight: 300;
+  font-size: 1.5em;
 }
 
-ul{
-  list-style: none;
-}
 
-.el-button{
+/* button */
+.el-button {
   font-family: inherit;
   background-color: white;
   border-color: #2B2D62;
   color: #2B2D62;
 }
 
-.el-button:hover{
+.el-button:hover {
   font-family: inherit;
   background-color: #2B2D62;
   border-color: #2B2D62;
   color: white;
+}
+
+/* image setting*/
+
+el-image.responsive {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
