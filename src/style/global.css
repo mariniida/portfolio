@@ -27,6 +27,10 @@ ul {
   list-style: none;
 }
 
+.box{
+  display: inline-block;
+}
+
 /* flexBox */
 .flexContainer {
   display: flex;

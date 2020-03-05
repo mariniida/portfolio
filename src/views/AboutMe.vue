@@ -1,8 +1,8 @@
 <template>
   <div class="page width80">
-    <div class="section flexContainer"> <!--Profile section-->
+    <div class="section flexContainer tileContainer"> <!--Profile section-->
 
-      <el-image class="flexItem"
+      <el-image class="flexItem display-none"
        style="width: 200px; height: 250px"
        :src="profile.img" fit="fit"></el-image>
 
@@ -90,10 +90,6 @@ export default {
 </script>
 
 <style scoped>
-.box{
-  display: inline-block;
-}
-
 .lineButtom{
   position: relative;
   display: inline-block;
@@ -140,5 +136,12 @@ export default {
   height: 1.75em;
   width: 1.75em;
   margin: 5px;
+}
+
+@media screen and (max-width:480px){
+  /*画面幅が480pxまでの時*/
+  .display-none{
+      display:none;
+  }
 }
 </style>

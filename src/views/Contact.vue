@@ -2,47 +2,47 @@
   <div class="page width80">
     <div class="flexContainer noAlign width80">
       <div class="flexItem half">
-      <h1>Form</h1>
-      <el-form
-      label-position="top"
-      :model="contactForm"
-      :rules="rules"
-      status-icon
-      ref="contactForm"
-      label-width="120px"
-      @submit.native.prevent>
-        <div class="alignLeft">
-        <el-form-item label="Name" prop="name">
-          <el-input v-model="contactForm.name"></el-input>
-        </el-form-item>
-
-        <el-form-item label="Email address" prop="email">
-          <el-input v-model="contactForm.email"></el-input>
-        </el-form-item>
-
-        <el-form-item label="Form" prop="message">
-          <el-input type="textarea" v-model="contactForm.message"></el-input>
-        </el-form-item>
+        <div class="section">
+          <h1>Contacts</h1>
+            <h3>{{contactDetail.detail}}</h3>
+        </div>
+        <div class="section">
+          <h1>Links</h1>
+            <li v-for="(link, index) in links">
+              <a target="_blank"
+              rel="noopener noreferrer"
+              :href="link.url">
+              <el-button>
+                <i :class="link.icon"></i>
+              {{link.name}}
+              </el-button>
+              </a>
+            </li>
+        </div>
       </div>
-
-        <el-form-item>
-          <el-button round type="primary" @click="submitForm('contactForm')">
-          Submit</el-button>
-        </el-form-item>
-      </el-form>
-    </div>
       <div class="flexItem half">
-        <h1>Links</h1>
-          <li v-for="(link, index) in links">
-            <a target="_blank"
-            rel="noopener noreferrer"
-            :href="link.url">
-            <el-button>
-              <i :class="link.icon"></i>
-            {{link.name}}
-            </el-button>
-            </a>
-          </li>
+        <h1>Form</h1>
+        <el-form label-position="top"
+        :model="contactForm" :rules="rules"
+        status-icon ref="contactForm"
+        label-width="120px" @submit.native.prevent>
+          <div class="alignLeft">
+            <el-form-item label="Name" prop="name">
+              <el-input v-model="contactForm.name"></el-input>
+            </el-form-item>
+            <el-form-item label="Email address" prop="email">
+              <el-input v-model="contactForm.email"></el-input>
+            </el-form-item>
+
+            <el-form-item label="Form" prop="message">
+              <el-input type="textarea" v-model="contactForm.message"></el-input>
+            </el-form-item>
+          </div>
+          <el-form-item>
+            <el-button round type="primary" @click="submitForm('contactForm')">
+            Submit</el-button>
+          </el-form-item>
+        </el-form>
       </div>
     </div>
   </div>
@@ -53,6 +53,11 @@ export default {
   name: 'Contact',
   data () {
     return {
+      contactDetail:{
+        type: 'emailAddress',
+        detail: 'mariniida114@gmail.com',
+        icon: 'el-icon-message',
+      },
       links:[
         {
           name:'Wantedly',
@@ -100,7 +105,6 @@ export default {
 </script>
 
 <style>
-
 .el-form{
   width: 100%;
   margin: 0 auto;
@@ -121,8 +125,8 @@ export default {
   justify-content: space-around;
 }
 
-.half{
-  width: 40%;
+.verAlign{
+   vertical-align:middle;
 }
 
 

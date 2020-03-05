@@ -12,9 +12,7 @@
       </el-tabs>
 -->
       <div v-loading="loading" class="section flexContainer tileContainer">
-          <div
-          class="thumbnail flexItem"
-          v-for="(work, index) in works" >
+          <div class="thumbnail flexItem"v-for="(work, index) in works" >
             <router-link :to="linkResolver(work)">
               <div class="thumbnail-overlay"></div>
                 <img class="thumbnail-image"
@@ -93,7 +91,7 @@ export default {
 
 .thumbnail-image{
   width: 100%;
-  object-fit: contain
+  object-fit: contain;
 }
 
 .thumbnail-details {
@@ -133,5 +131,4 @@ export default {
 .fadeIn-top{
   top: 20%;
 }
-
 </style>
