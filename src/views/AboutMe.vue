@@ -1,17 +1,15 @@
 <template>
-  <div class="page">
+  <div class="page width80">
     <div class="section flexContainer"> <!--Profile section-->
       <el-image class="flexItem"
        style="width: 200px; height: 250px"
        :src="profile.img" fit="fit"></el-image>
-
       <div class="flexItem">
         <h1>{{profile.tagLine}}</h1>
         <h3>{{profile.bio}}</h3>
       </div>
     </div>
-
-    <div class="section width80"> <!--Timeline section-->
+    <div class="section"> <!--Timeline section-->
       <h1>Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"
         class="flexContainer">
@@ -30,19 +28,19 @@
     </div>
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
-      <ul class="flexContainer tileContainer skillContianer">
-        <li v-for="(skill, index) in skills" class="flexItem skillItem">
-            <h3 class="inline">{{skill.name}}</h3>
-            <div class="inline">
-              <div class="inline" v-for="n in skill.level">
-                <div class="darkSquare"/>
-              </div>
-              <div class="inline" v-for="n in 5-skill.level">
-                <div class="lightSquare"/>
-              </div>
-          </div>
-        </li>
-      </ul>
+      <div class="flexContainer tileContainer">
+        <div v-for="(skill, index) in skills" class="flexItem textCenter">
+          <h3>{{skill.name}}</h3>
+          <ul class="boxContainer">
+            <li v-for="n in skill.level" class="box">
+              <div class="darkSquare"/>
+            </li>
+            <li v-for="n in 5-skill.level" class="box">
+              <div class="lightSquare"/>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -72,15 +70,15 @@ export default {
         }
       ],
       skills:[
-        {name: 'Mictrosoft Office Suite', level: 3},
-        {name: 'Japanese', level: 5},
+        {name: 'Microsoft Office Suite', level: 3},
         {name: 'Adobe Photoshop', level: 2},
-        {name: 'English', level: 4},
         {name: 'Adobe Illustrator', level: 3},
-        {name: 'HTML',level: 3},
         {name: 'Adobe InDesign', level: 2},
-        {name: 'CSS', level: 3},
         {name: 'Adobe XD', level: 4},
+        {name: 'Japanese', level: 5},
+        {name: 'English', level: 4},
+        {name: 'HTML',level: 3},
+        {name: 'CSS', level: 3},
         {name: 'JavaScript', level: 2},
       ],
     }
@@ -89,6 +87,10 @@ export default {
 </script>
 
 <style scoped>
+.box{
+  display: inline-block;
+}
+
 .lineButtom{
   position: relative;
   display: inline-block;
@@ -121,22 +123,6 @@ export default {
 
 .left{
   flex-basis: 150px;
-}
-
-.tileContainer{
-  padding: 0px;
-  justify-content:space-between;
-}
-
-.tileItem{
-  align-self: center;
-  text-align: right;
-  width: 60%;
-}
-
-.inline{
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .darkSquare{
