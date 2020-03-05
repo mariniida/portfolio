@@ -3,7 +3,6 @@
   mode="horizontal"
   :router="true"
   active-text-color="#2B2D62">
-  <el-menu-item index="Landing">icon</el-menu-item>
   <el-menu-item index="work">Works</el-menu-item>
   <el-menu-item index="Contact">Contact</el-menu-item>
   <el-menu-item index="AboutMe">About me</a>

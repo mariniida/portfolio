@@ -33,16 +33,16 @@
     </div>
       <div class="flexItem half">
         <h1>Links</h1>
-        <h2>Coming soon!</h2>
-        <!--
-        List links
-
-        <li v-for="(link, index) in links">
+          <li v-for="(link, index) in links">
+            <a target="_blank"
+            rel="noopener noreferrer"
+            :href="link.url">
+            <el-button>
+              <i :class="link.icon"></i>
             {{link.name}}
-        </li>
-
-        -->
-
+            </el-button>
+            </a>
+          </li>
       </div>
     </div>
   </div>
@@ -54,26 +54,34 @@ export default {
   data () {
     return {
       links:[
-        {name:'Redesigner',link:''},
-      ],
-      contactForm: {
-          name: '',
-          email:'',
-          message: ''
-      },
-      rules: {
-        name: [
-          { required: true, message: 'Please input your name', trigger: 'blur' },
-        ],
-        email:[
-          { required: true, message: 'Please input email address', trigger: 'blur' },
-          { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-        ],
-        message:[
-          { required: true, message: 'Please input your message', trigger: 'blur' },
-          { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
-        ]
-      },
+        {
+          name:'Wantedly',
+          icon:'el-icon-user',
+          url:'https://www.wantedly.com/secret_profiles/1h8Wm5W3Bo-i1Ok2u_aFIV_b2uy1eFz9'
+        },
+        {
+          name:'indeed Resume',
+          icon:'el-icon-download',
+          url:'https://my.indeed.com/p/69cw2g1'
+        }],
+        contactForm: {
+            name: '',
+            email:'',
+            message: ''
+        },
+        rules: {
+          name: [
+            { required: true, message: 'Please input your name', trigger: 'blur' },
+          ],
+          email:[
+            { required: true, message: 'Please input email address', trigger: 'blur' },
+            { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+          ],
+          message:[
+            { required: true, message: 'Please input your message', trigger: 'blur' },
+            { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
+          ]
+        },
     }
   },
   methods: {
@@ -87,7 +95,7 @@ export default {
           }
         });
       }
-}
+    }
 }
 </script>
 

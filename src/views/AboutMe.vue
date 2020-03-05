@@ -1,13 +1,16 @@
 <template>
   <div class="page width80">
     <div class="section flexContainer"> <!--Profile section-->
+
       <el-image class="flexItem"
        style="width: 200px; height: 250px"
        :src="profile.img" fit="fit"></el-image>
+
       <div class="flexItem">
         <h1>{{profile.tagLine}}</h1>
         <h3>{{profile.bio}}</h3>
       </div>
+
     </div>
     <div class="section"> <!--Timeline section-->
       <h1>Timeline</h1>

@@ -12,7 +12,9 @@
       </el-tabs>
 -->
       <div v-loading="loading" class="section flexContainer tileContainer">
-          <div class="thumbnail flexItem" v-for="(work, index) in works" >
+          <div
+          class="thumbnail flexItem"
+          v-for="(work, index) in works" >
             <router-link :to="linkResolver(work)">
               <div class="thumbnail-overlay"></div>
                 <img class="thumbnail-image"
@@ -55,9 +57,12 @@ export default {
   },
   created () {
     this.getAllWorks();
+  },
+  beforeRouteUpdate (to, from, next) {
+    this.getContent(to.params.uid);
+    next();
   }
 }
-
 </script>
 
 <style>
