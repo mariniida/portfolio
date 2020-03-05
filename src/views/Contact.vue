@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div class="flexContainer noAlign">
+    <div class="flexContainer noAlign width80">
       <div class="flexItem half">
       <h1>Form</h1>
       <el-form

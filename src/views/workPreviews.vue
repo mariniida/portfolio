@@ -1,18 +1,19 @@
 <template>
   <div class="page">
+<!--
     <el-tabs  tabPosition="top">
-      <el-tab-pane
+    Planning to include a filtering function based on the type of work
+
+    <el-tab-pane
         v-for="(workType, index) in workTypes"
         :key="index"
         :label="workType"
         :name="workType">{{workType}}</el-tab-pane>
       </el-tabs>
-
+-->
       <div v-loading="loading" class="section flexContainer tileContainer">
           <div class="thumbnail flexItem" v-for="(work, index) in works" >
-
             <router-link :to="linkResolver(work)">
-
               <div class="thumbnail-overlay"></div>
                 <img class="thumbnail-image"
                 style="width: 300px; height: 300px"
@@ -22,7 +23,6 @@
                   <p>{{work.data.tag}}</p>
                 </div>
             </router-link>
-
           </div>
       </div>
   </div>

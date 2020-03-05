@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="section"> <!--Timeline section-->
+    <div class="section width80"> <!--Timeline section-->
       <h1>Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"
         class="flexContainer">

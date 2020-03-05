@@ -3,7 +3,7 @@
     <div class="workLP">
       <h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
       <el-image
-        :src="work.thumbnail.url"
+        :src="work.landingImg.url"
         :fit="contain"></el-image>
     </div>
     <slices-block :slices="work.slices"/>
@@ -30,7 +30,7 @@ export default {
         uid:null,
         title:null,
         tool:null,
-        thumbnail:null,
+        landingImg:null,
         tag:null,
         description:null,
         slices:[],
@@ -45,7 +45,7 @@ export default {
           this.documentId = document.id
           this.work.title = document.data.title
           this.work.tool = document.data.tool
-          this.work.thumbnail = document.data.thumbnail
+          this.work.landingImg = document.data.landingimg
           this.work.tag = document.data.tag
           this.work.description = document.data.description
           this.work.slices = document.data.body
