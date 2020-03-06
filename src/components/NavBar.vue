@@ -2,7 +2,7 @@
   <el-menu
   mode="horizontal"
   :router="true"
-  active-text-color="#2B2D62">
+  :active-text-color="activeColor">
   <el-menu-item index="work">Works</el-menu-item>
   <el-menu-item index="Contact">Contact</el-menu-item>
   <el-menu-item index="AboutMe">About me</a>
@@ -15,7 +15,7 @@ export default {
   name: 'NavBar',
   data () {
     return {
-      activeColor: "var(--Gradient5)",
+      activeColor: "var(--keyColor)",
     }
   }
 }

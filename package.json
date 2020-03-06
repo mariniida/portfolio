@@ -4,7 +4,7 @@
   "description": "Marin's portfolio website",
   "author": "marin",
   "scripts": {
-    "dev": "npm run dev",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
     "start": "node server.js"
   },

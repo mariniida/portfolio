@@ -53,11 +53,7 @@ ul {
 /*might use sass later*/
 :root {
   --white:#FFFFFF;
-  --Gradient1:#E3E7F1;
-  --Gradient2:#C6CBEF;
-  --Gradient3:#8186D5;
-  --Gradient4:#494CA2;
-  --Gradient5:#2B2D62;
+  --keyColor:#3550B2;
 }
 
 
@@ -111,21 +107,6 @@ el-divider{
   text-align: right;
 }
 
-/* button */
-.el-button {
-  font-family: inherit;
-  background-color: white;
-  border-color: #2B2D62;
-  color: #2B2D62;
-  margin: 10px;
-}
-
-.el-button:hover {
-  font-family: inherit;
-  background-color: #2B2D62;
-  border-color: #2B2D62;
-  color: white;
-}
 
 /* image setting*/
 

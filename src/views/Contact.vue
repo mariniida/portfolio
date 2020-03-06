@@ -14,7 +14,7 @@
               :href="link.url">
               <el-button>
                 <i :class="link.icon"></i>
-              {{link.name}}
+              	{{link.name}}
               </el-button>
               </a>
             </li>
@@ -39,7 +39,8 @@
             </el-form-item>
           </div>
           <el-form-item>
-            <el-button round type="primary" @click="submitForm('contactForm')">
+            <el-button round  @click="submitForm('contactForm')"
+						style="">
             Submit</el-button>
           </el-form-item>
         </el-form>
@@ -105,29 +106,29 @@ export default {
 </script>
 
 <style>
-.el-form{
+.el-form {
   width: 100%;
   margin: 0 auto;
 }
 
-.alignLeft{
+.alignLeft {
   text-align: left;
 }
 
-.el-form--label-top .el-form-item__label{
+.el-form--label-top .el-form-item__label {
   padding: 0px;
   line-height: 30px;
 }
 
-.noAlign{
+.noAlign {
   align-items: flex-start;
   flex-wrap:wrap;
   justify-content: space-around;
 }
 
-.verAlign{
-   vertical-align:middle;
+.el-button.el-button--default{
+	border:1px solid #3550B2;
+	color: #3550B2;
+	margin: 5px;
 }
-
-
 </style>
