@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "Marin's portfolio website",
   "author": "marin",
-  "private": true,
   "scripts": {
     "dev": "npm run dev",
     "build": "node build/build.js",
-    "start": "node server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "element-ui": "^2.13.0",
