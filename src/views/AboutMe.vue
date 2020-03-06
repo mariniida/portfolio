@@ -12,6 +12,7 @@
       </div>
 
     </div>
+		<el-divider></el-divider>
     <div class="section"> <!--Timeline section-->
       <h1>Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"

@@ -22,23 +22,31 @@
       </div>
       <div class="flexItem half">
         <h1>Form</h1>
+
         <el-form label-position="top"
         :model="contactForm" :rules="rules"
         status-icon ref="contactForm"
-        label-width="120px" @submit.native.prevent>
+        label-width="120px" @submit.native.prevent
+				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse">
           <div class="alignLeft">
-            <el-form-item label="Name" prop="name">
-              <el-input v-model="contactForm.name"></el-input>
+            <el-form-item label="Name" prop="name" >
+              <el-input v-model="contactForm.name" name="entry.295529443"></el-input>
             </el-form-item>
             <el-form-item label="Email address" prop="email">
-              <el-input v-model="contactForm.email"></el-input>
+              <el-input v-model="contactForm.email" name="entry.541181946"></el-input>
             </el-form-item>
 
             <el-form-item label="Form" prop="message">
-              <el-input type="textarea" v-model="contactForm.message"></el-input>
+              <el-input type="textarea" v-model="contactForm.message" name="entry.1306209770"></el-input>
             </el-form-item>
           </div>
           <el-form-item>
+						<el-alert v-if="success" title="Sent"
+					    type="success" show-icon>
+					  </el-alert>
+						<el-alert v-if="error" title="Error" type="error"
+							show-icon>
+							</el-alert>
             <el-button round  @click="submitForm('contactForm')"
 						style="">
             Submit</el-button>
@@ -54,6 +62,8 @@ export default {
   name: 'Contact',
   data () {
     return {
+			success:false,
+			error:false,
       contactDetail:{
         type: 'emailAddress',
         detail: 'mariniida114@gmail.com',
@@ -77,14 +87,14 @@ export default {
         },
         rules: {
           name: [
-            { required: true, message: 'Please input your name', trigger: 'blur' },
+            { required: true, message: "What's your name", trigger: 'blur' },
           ],
           email:[
-            { required: true, message: 'Please input email address', trigger: 'blur' },
+            { required: true, message: "What's your email address", trigger: 'blur' },
             { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
           ],
           message:[
-            { required: true, message: 'Please input your message', trigger: 'blur' },
+            { required: true, message: "What do you wanna tell me?", trigger: 'blur' },
             { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
           ]
         },
@@ -94,10 +104,9 @@ export default {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+						this.success=true;
           } else {
-            console.log('error submit!!');
-            return false;
+						this.error=true;
           }
         });
       }
