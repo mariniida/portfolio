@@ -4,7 +4,7 @@
 
       <el-image class="flexItem display-none"
        style="width: 200px; height: 250px"
-       :src="profile.img" fit="fit"></el-image>
+       :src="profile.img" fit="cover"></el-image>
 
       <div class="flexItem">
         <h1>{{profile.tagLine}}</h1>
@@ -56,7 +56,7 @@ export default {
     return {
       profile:{
         tagLine:"I'm Marin Iida.",
-        bio:"An aspiring UI/UX designer based in Japan.",
+        bio:"An aspiring UI/UX designer based in Japan (for now).",
         img: require("../assets/IMG_2338.jpg"),
       },
       profileImg: require("../assets/IMG_2338.jpg"),
@@ -70,7 +70,7 @@ export default {
           endDate:'2019 Dec',
           heading:'University of Melbourne',
           subHeading:'Bachelor of Design',
-          description:'Major: Digital Technologies. Minor: Graphic Design, Computing.',
+          description:'Majored in Digital Technologies and minored in Graphic Design and Computing.',
         }
       ],
       skills:[
