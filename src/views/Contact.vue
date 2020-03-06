@@ -23,11 +23,14 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
+
+
         <el-form label-position="top"
         :model="contactForm" :rules="rules"
         status-icon ref="contactForm"
         label-width="120px" @submit.native.prevent
-				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse">
+				id="mG61Hd"
+				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse" method="post">
           <div class="alignLeft">
             <el-form-item label="Name" prop="name" >
               <el-input v-model="contactForm.name" name="entry.295529443"></el-input>
@@ -35,7 +38,6 @@
             <el-form-item label="Email address" prop="email">
               <el-input v-model="contactForm.email" name="entry.541181946"></el-input>
             </el-form-item>
-
             <el-form-item label="Form" prop="message">
               <el-input type="textarea" v-model="contactForm.message" name="entry.1306209770"></el-input>
             </el-form-item>
@@ -47,9 +49,7 @@
 						<el-alert v-if="error" title="Error" type="error"
 							show-icon>
 							</el-alert>
-            <el-button round  @click="submitForm('contactForm')"
-						style="">
-            Submit</el-button>
+							<input class="button" type="submit" value="Submit">
           </el-form-item>
         </el-form>
       </div>
@@ -139,5 +139,26 @@ export default {
 	border:1px solid #3550B2;
 	color: #3550B2;
 	margin: 5px;
+}
+
+.button{
+	border-radius: 20px;
+	padding: 12px 23px;
+	font-size: 14px;
+	border: 1px solid #3550B2;
+	background: white;
+	color: #3550B2;
+	line-height: 1;
+	transition: .1s;
+}
+
+.button:hover{
+	border-radius: 20px;
+	padding: 12px 23px;
+	font-size: 14px;
+	border: 1px solid #3550B2;
+	background: #3550B2;
+	color: white;
+	cursor: pointer;
 }
 </style>
