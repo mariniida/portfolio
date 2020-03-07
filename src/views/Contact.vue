@@ -23,20 +23,22 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
-				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post" data-formrun-saving="true">
+				<form class="formrun"
+				action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post"
+				data-formrun-saving="true">
 					<div class="formItem alignLeft">
-						<label for="name">Name</label>
-					  <input class="text" required type="text" name="name" >
+						<label>Name</label>
+					  <input class="text" data-formrun-required type="text" name="name">
 					</div>
 
 					<div class="formItem alignLeft">
-						  <label for="email">Email Address</label>
+						  <label>Email Address</label>
 						  <input data-formrun-type="email" data-formrun-required name="email" class="text">
 							 <div data-formrun-show-if-error="email">Please check your email</div>
 					</div>
 
 					<div class="formItem alignLeft">
-					  <label for="message">Message</label>
+					  <label>Message</label>
 					  <textarea data-formrun-required name="message" minlength="10" class="textarea"></textarea>
 						<div data-formrun-show-if-error="message">お問い合わせ入力してください</div>
 					</div>
@@ -44,9 +46,12 @@
 					<div class="g-recaptcha"
 					data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
 
-				  <button type="submit" class="button round" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit</button>
+				  <button type="submit"
+					class="button round"
+					data-formrun-error-text="Cannot submit"
+					data-formrun-submitting-text="Sending...">Submit
+				</button>
 				</form>
-
       </div>
     </div>
   </div>
@@ -96,6 +101,14 @@ export default {
 </script>
 
 <style>
+
+._formrun_gotcha{
+	position:absolute!important;
+	height:1px;
+	width:1px;
+	overflow:hidden;
+}
+
 .form {
   width: 100%;
   margin: 0 auto;
