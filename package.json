@@ -9,6 +9,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
     "element-ui": "^2.13.0",
     "express": "^4.17.1",
     "prismic-dom": "^2.1.0",
