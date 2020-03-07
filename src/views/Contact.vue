@@ -23,38 +23,34 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
-				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse" class="form">
+				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post">
 					<div class="formItem alignLeft">
 						<label for="name">Name</label>
-					  <input required id="name" type="text" name="entry.295529443" >
+					  <input class="text" required type="text" name="name" >
 					</div>
 
 					<div class="formItem alignLeft">
 						  <label for="email">Email Address</label>
-						  <input required id="email" type="email" name="entry.541181946">
+						  <input data-formrun-type="email" data-formrun-required name="email" class="text">
+							 <div data-formrun-show-if-error="email">Please check your email</div>
 					</div>
 
 					<div class="formItem alignLeft">
 					  <label for="message">Message</label>
-					  <textarea required id="message" name="entry.1306209770" minlength="10"></textarea>
+					  <textarea data-formrun-required name="message" minlength="10" class="textarea"></textarea>
+						<div data-formrun-show-if-error="message">お問い合わせ入力してください</div>
 					</div>
 
-				  <button type="submit" name="button" value="Submit" class="button" @click="submitForm()">Submit</button>
+					<div class="g-recaptcha" data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
+
+				  <button type="submit" class="button" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit</button>
 				</form>
-
-				<div
-					class="formrun-embed"
-					data-formrun-form="@mariniida"
-					data-formrun-redirect="true">
-				</div>
-
-
 
       </div>
     </div>
   </div>
 </template>
-				<script src="https://sdk.form.run/js/v2/embed.js"></script>
+
 
 <script>
 
@@ -93,9 +89,8 @@ export default {
           { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
         ]
       },
-  }
-},
-
+  	}
+	}
 }
 </script>
 
@@ -123,7 +118,7 @@ export default {
 	font-size: 1.5em;
 }
 
-.formItem input[type='text'] {
+.formItem .text {
   width:100%;
 	padding: 12px 20px;
   margin: 8px 0;
@@ -132,16 +127,8 @@ export default {
 	border: 1px solid #ccc;
 }
 
-.formItem input[type='email'] {
-  width:100%;
-	padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-}
 
-.formItem textarea{
+.formItem .textarea{
   width:100%;
 	padding: 12px 20px;
   margin: 8px 0;
