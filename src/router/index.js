@@ -4,6 +4,7 @@ import AboutMe from '@/views/AboutMe'
 import Contact from '@/views/Contact'
 import Work from '@/views/Work'
 import Works from '@/views/workPreviews'
+import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
 
@@ -12,7 +13,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: { name: 'Works' }
+      redirect: { path: '/work' }
+    },
+    {
+      path: '/not-found',
+      name: 'not-found',
+      component: NotFound
+    },
+    {
+      path: '*',
+      redirect: { path: '/not-found' }
     },
     {
       path: '/aboutme',

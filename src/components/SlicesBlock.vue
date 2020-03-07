@@ -13,7 +13,6 @@
 </template>
 
 <script>
-// Imports for all slices
  import ImageGallery from './slices/ImageGallery.vue';
 
 export default {

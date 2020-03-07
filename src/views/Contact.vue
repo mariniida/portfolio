@@ -12,9 +12,9 @@
               <a target="_blank"
               rel="noopener noreferrer"
               :href="link.url">
-              <el-button>
+              <el-button class="button">
                 <i :class="link.icon"></i>
-              {{link.name}}
+              	{{link.name}}
               </el-button>
               </a>
             </li>
@@ -22,31 +22,33 @@
       </div>
       <div class="flexItem half">
         <h1>Form</h1>
-        <el-form label-position="top"
-        :model="contactForm" :rules="rules"
-        status-icon ref="contactForm"
-        label-width="120px" @submit.native.prevent>
-          <div class="alignLeft">
-            <el-form-item label="Name" prop="name">
-              <el-input v-model="contactForm.name"></el-input>
-            </el-form-item>
-            <el-form-item label="Email address" prop="email">
-              <el-input v-model="contactForm.email"></el-input>
-            </el-form-item>
 
-            <el-form-item label="Form" prop="message">
-              <el-input type="textarea" v-model="contactForm.message"></el-input>
-            </el-form-item>
-          </div>
-          <el-form-item>
-            <el-button round type="primary" @click="submitForm('contactForm')">
-            Submit</el-button>
-          </el-form-item>
-        </el-form>
+				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post" data-formrun-saving="true">
+					<div class="formItem alignLeft">
+						<label>Name</label>
+					  <input class="text" data-formrun-required type="text" name="Name">
+					</div>
+
+					<div class="formItem alignLeft">
+						  <label>Email Address</label>
+						  <input data-formrun-type="email" data-formrun-required name="Email address" class="text">
+					</div>
+
+					<div class="formItem alignLeft">
+					  <label>Message</label>
+					  <textarea data-formrun-required name="Message" minlength="10" class="textarea"></textarea>
+					</div>
+
+				  <!--<button type="submit" class="button round" data-formrun-error-text="Cannot submit"data-formrun-submitting-text="Sending...">Submit
+				</button>-->
+				<p>Coming soon!</p>
+				</form>
+
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -68,66 +70,55 @@ export default {
           name:'indeed Resume',
           icon:'el-icon-download',
           url:'https://my.indeed.com/p/69cw2g1'
-        }],
-        contactForm: {
-            name: '',
-            email:'',
-            message: ''
-        },
-        rules: {
-          name: [
-            { required: true, message: 'Please input your name', trigger: 'blur' },
-          ],
-          email:[
-            { required: true, message: 'Please input email address', trigger: 'blur' },
-            { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-          ],
-          message:[
-            { required: true, message: 'Please input your message', trigger: 'blur' },
-            { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
-          ]
-        },
-    }
-  },
-  methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
-          }
-        });
-      }
-    }
+      }],
+  	}
+	}
 }
 </script>
 
 <style>
-.el-form{
+.formrun {
   width: 100%;
   margin: 0 auto;
 }
-
-.alignLeft{
+.alignLeft {
   text-align: left;
 }
-
-.el-form--label-top .el-form-item__label{
-  padding: 0px;
-  line-height: 30px;
-}
-
-.noAlign{
+.noAlign {
   align-items: flex-start;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.verAlign{
-   vertical-align:middle;
+.formItem {
+	margin-bottom: 10px;
 }
 
+.formItem label {
+  line-height: 30px;
+	font-size: 1.5em;
+}
+
+.formItem .text {
+  width:100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.formItem .textarea {
+  width:100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.round {
+	border-radius: 20px;
+}
 
 </style>

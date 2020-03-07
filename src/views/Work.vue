@@ -4,10 +4,16 @@
       <h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
       <el-image
         :src="work.landingImg.url"
-        :fit="contain"></el-image>
+        fit="contain">
+				<div slot="placeholder" class="slot">
+					<p class="slottext">Loading...</p>
+				</div>
+			</el-image>
     </div>
     <slices-block :slices="work.slices"/>
-    <p class="themeColor">{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
+
+    <p class="themeColor">
+			{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
     <div class="section description">
       <prismic-rich-text :field="work.description"/>
       <!-- <p>{{$prismic.richTextAsPlain(work.description)}}</p>-->
@@ -27,14 +33,15 @@ export default {
     return {
       documentId: '',
       work: {
-        uid:null,
-        title:null,
-        tool:null,
-        landingImg:null,
-        tag:null,
-        description:null,
-        slices:[],
+        uid: '',
+        title: '',
+        tool: '',
+        landingImg: '',
+        tag: '',
+        description: '',
+        slices: [],
       },
+
     }
   },
   methods: {
@@ -66,8 +73,7 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style>
 .workLP {
   margin: 0 auto;
   width: 90%;
@@ -78,5 +84,4 @@ export default {
   padding: 20px;
   width: 80%;
 }
-
 </style>

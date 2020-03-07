@@ -9,6 +9,18 @@
   color: #707070;
 }
 
+ul {
+  list-style: none;
+}
+
+li{
+  list-style: none;
+}
+
+.box{
+  display: inline-block;
+}
+
 .page {
   padding: 20px;
   margin-bottom: 30px;
@@ -23,12 +35,8 @@
   margin: 0 auto;
 }
 
-ul {
-  list-style: none;
-}
-
-.box{
-  display: inline-block;
+.textCenter{
+  text-align: right;
 }
 
 /* flexBox */
@@ -53,11 +61,7 @@ ul {
 /*might use sass later*/
 :root {
   --white:#FFFFFF;
-  --Gradient1:#E3E7F1;
-  --Gradient2:#C6CBEF;
-  --Gradient3:#8186D5;
-  --Gradient4:#494CA2;
-  --Gradient5:#2B2D62;
+  --keyColor:#3550B2;
 }
 
 
@@ -102,32 +106,11 @@ p {
   margin: 2px;
 }
 
+/* element-ui */
 el-divider{
   font-weight: 300;
   font-size: 1.5em;
 }
-
-.textCenter{
-  text-align: right;
-}
-
-/* button */
-.el-button {
-  font-family: inherit;
-  background-color: white;
-  border-color: #2B2D62;
-  color: #2B2D62;
-  margin: 10px;
-}
-
-.el-button:hover {
-  font-family: inherit;
-  background-color: #2B2D62;
-  border-color: #2B2D62;
-  color: white;
-}
-
-/* image setting*/
 
 el-image.responsive {
     width: 100%;
@@ -135,6 +118,25 @@ el-image.responsive {
     object-fit: cover;
 }
 
-li{
-  list-style: none;
+.el-loading-spinner .path {
+	stroke: #3550B2 !important;
+}
+
+.el-button{
+	margin: 5px !important;
+	border: 1px solid #3550B2 !important;
+	color: #3550B2 !important;
+}
+
+.el-button:hover{
+	border: 1px solid #3550B2 !important;
+	color: white !important;
+	background: #3550B2 !important;
+	cursor: pointer;
+}
+
+.slotText{
+  vertical-align: middle;
+  text-align: center;
+  margin: 15px;
 }

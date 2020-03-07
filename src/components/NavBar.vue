@@ -1,11 +1,12 @@
 <template>
   <el-menu
   mode="horizontal"
+	:default-active="activeIndex"
   :router="true"
-  active-text-color="#2B2D62">
-  <el-menu-item index="work">Works</el-menu-item>
-  <el-menu-item index="Contact">Contact</el-menu-item>
-  <el-menu-item index="AboutMe">About me</a>
+  :active-text-color="activeColor">
+  <el-menu-item index="work" :route="{ name:'Works' }">Works</el-menu-item>
+  <el-menu-item index="contact" :route="{ name:'Contact' }">Contact</el-menu-item>
+  <el-menu-item index="aboutme" :route="{ name:'AboutMe' }">About me</a>
   </el-menu-item>
 </el-menu>
 </template>
@@ -15,12 +16,11 @@ export default {
   name: 'NavBar',
   data () {
     return {
-      activeColor: "var(--Gradient5)",
+      activeColor: "var(--keyColor)",
+			activeIndex: 'work',
     }
   }
 }
 </script>
 <style>
-
-
 </style>
