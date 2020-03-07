@@ -86,16 +86,19 @@ export default {
 }
 .noAlign {
   align-items: flex-start;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
-.formItem{
+
+.formItem {
 	margin-bottom: 10px;
 }
-.formItem label{
+
+.formItem label {
   line-height: 30px;
 	font-size: 1.5em;
 }
+
 .formItem .text {
   width:100%;
 	padding: 12px 20px;
@@ -104,7 +107,8 @@ export default {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 }
-.formItem .textarea{
+
+.formItem .textarea {
   width:100%;
 	padding: 12px 20px;
   margin: 8px 0;
@@ -112,25 +116,9 @@ export default {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 }
-.round{
+
+.round {
 	border-radius: 20px;
 }
-.button{
-	margin: 5px;
-	padding: 12px 23px;
-	font-size: 14px;
-	border: 1px solid #3550B2;
-	color: #3550B2;
-	background: white;
-	line-height: 1;
-	transition: .1s;
-}
-.button:hover{
-	padding: 12px 23px;
-	font-size: 14px;
-	border: 1px solid #3550B2;
-	color: white;
-	background: #3550B2;
-	cursor: pointer;
-}
+
 </style>
