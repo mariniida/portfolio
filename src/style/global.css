@@ -122,22 +122,15 @@ el-image.responsive {
 	stroke: #3550B2 !important;
 }
 
-.button{
+.el-button{
 	margin: 5px;
-	padding: 12px 23px;
-	font-size: 14px;
-	border: 1px solid #3550B2;
-	color: #3550B2;
-	background: white;
-	line-height: 1;
-	transition: .1s;
+	border: 1px solid #3550B2 !important;
+	color: #3550B2 !important;
 }
 
-.button:hover{
-	padding: 12px 23px;
-	font-size: 14px;
-	border: 1px solid #3550B2;
-	color: white;
-	background: #3550B2;
+.el-button:hover{
+	border: 1px solid #3550B2 !important;
+	color: white !important;
+	background: #3550B2 !important;
 	cursor: pointer;
 }
