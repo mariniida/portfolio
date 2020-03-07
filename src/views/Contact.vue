@@ -41,8 +41,9 @@
 						<div data-formrun-show-if-error="message">Please input some message.</div>
 					</div>
 
-				  <button type="submit" class="button round" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit
-				</button>
+				  <!--<button type="submit" class="button round" data-formrun-error-text="Cannot submit"data-formrun-submitting-text="Sending...">Submit
+				</button>-->
+				<p>Coming soon!</p>
 				</form>
 
       </div>
