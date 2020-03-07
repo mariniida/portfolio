@@ -6,7 +6,11 @@
         <el-carousel-item v-for="(item, index) in slice.items"  :key="index">
           <el-image
           :src="item.gallery_image.url"
-          fit="contain" ></el-image>
+          fit="contain" >
+					<div slot="placeholder" class="slot">
+						<p class="slottext">Loading...</p>
+					</div>
+				</el-image>
         </el-carousel-item>
     </el-carousel>
   </div>

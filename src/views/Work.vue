@@ -5,7 +5,9 @@
       <el-image
         :src="work.landingImg.url"
         fit="contain">
-				<div slot="placeholder" class="image-slot">Loading<span class="dot">...</span></div>
+				<div slot="placeholder" class="slot">
+					<p class="slottext">Loading...</p>
+				</div>
 			</el-image>
     </div>
     <slices-block :slices="work.slices"/>

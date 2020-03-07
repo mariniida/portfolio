@@ -123,7 +123,7 @@ el-image.responsive {
 }
 
 .el-button{
-	margin: 5px;
+	margin: 5px !important;
 	border: 1px solid #3550B2 !important;
 	color: #3550B2 !important;
 }
@@ -133,4 +133,10 @@ el-image.responsive {
 	color: white !important;
 	background: #3550B2 !important;
 	cursor: pointer;
+}
+
+.slotText{
+  vertical-align: middle;
+  text-align: center;
+  margin: 15px;
 }

@@ -4,7 +4,11 @@
 
       <el-image class="flexItem display-none"
        style="width: 200px; height: 250px"
-       :src="profile.img" fit="cover"></el-image>
+       :src="profile.img" fit="cover">
+				 <div slot="placeholder">
+		       <h4 class="slottext">Loading...</h4>
+		     </div>
+			</el-image>
 
       <div class="flexItem">
         <h1>{{profile.tagLine}}</h1>
