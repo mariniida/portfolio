@@ -23,7 +23,7 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
-				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post">
+				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post" data-formrun-saving="true">
 					<div class="formItem alignLeft">
 						<label for="name">Name</label>
 					  <input class="text" required type="text" name="name" >
@@ -41,7 +41,8 @@
 						<div data-formrun-show-if-error="message">お問い合わせ入力してください</div>
 					</div>
 
-					<div class="g-recaptcha" data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
+					<div class="g-recaptcha"
+					data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
 
 				  <button type="submit" class="button round" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit</button>
 				</form>
