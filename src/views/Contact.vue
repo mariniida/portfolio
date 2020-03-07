@@ -12,7 +12,7 @@
               <a target="_blank"
               rel="noopener noreferrer"
               :href="link.url">
-              <el-button>
+              <el-button class="button">
                 <i :class="link.icon"></i>
               	{{link.name}}
               </el-button>
@@ -23,41 +23,41 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
+				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse" class="form">
+					<div class="formItem alignLeft">
+						<label for="name">Name</label>
+					  <input required id="name" type="text" name="entry.295529443" >
+					</div>
+
+					<div class="formItem alignLeft">
+						  <label for="email">Email Address</label>
+						  <input required id="email" type="email" name="entry.541181946">
+					</div>
+
+					<div class="formItem alignLeft">
+					  <label for="message">Message</label>
+					  <textarea required id="message" name="entry.1306209770" minlength="10"></textarea>
+					</div>
+
+				  <button type="submit" name="button" value="Submit" class="button" @click="submitForm()">Submit</button>
+				</form>
+
+				<div
+					class="formrun-embed"
+					data-formrun-form="@mariniida"
+					data-formrun-redirect="true">
+				</div>
 
 
-        <el-form label-position="top"
-        :model="contactForm" :rules="rules"
-        status-icon ref="contactForm"
-        label-width="120px" @submit.native.prevent
-				id="mG61Hd"
-				action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdY5f9Fd-9G0cE-wY1FMFNMcJoQbBJE_9T7_sYeSWAoMLH6hg/formResponse" method="post">
-          <div class="alignLeft">
-            <el-form-item label="Name" prop="name" >
-              <el-input v-model="contactForm.name" name="entry.295529443"></el-input>
-            </el-form-item>
-            <el-form-item label="Email address" prop="email">
-              <el-input v-model="contactForm.email" name="entry.541181946"></el-input>
-            </el-form-item>
-            <el-form-item label="Form" prop="message">
-              <el-input type="textarea" v-model="contactForm.message" name="entry.1306209770"></el-input>
-            </el-form-item>
-          </div>
-          <el-form-item>
-						<el-alert v-if="success" title="Sent"
-					    type="success" show-icon>
-					  </el-alert>
-						<el-alert v-if="error" title="Error" type="error"
-							show-icon>
-							</el-alert>
-							<input class="button" type="submit" value="Submit">
-          </el-form-item>
-        </el-form>
+
       </div>
     </div>
   </div>
 </template>
+				<script src="https://sdk.form.run/js/v2/embed.js"></script>
 
 <script>
+
 export default {
   name: 'Contact',
   data () {
@@ -79,43 +79,28 @@ export default {
           name:'indeed Resume',
           icon:'el-icon-download',
           url:'https://my.indeed.com/p/69cw2g1'
-        }],
-        contactForm: {
-            name: '',
-            email:'',
-            message: ''
-        },
-        rules: {
-          name: [
-            { required: true, message: "What's your name", trigger: 'blur' },
-          ],
-          email:[
-            { required: true, message: "What's your email address", trigger: 'blur' },
-            { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-          ],
-          message:[
-            { required: true, message: "What do you wanna tell me?", trigger: 'blur' },
-            { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
-          ]
-        },
-    }
-  },
-  methods: {
-      submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-						this.success=true;
-          } else {
-						this.error=true;
-          }
-        });
-      }
-    }
+      }],
+      rules: {
+        name: [
+          { required: true, message: "What's your name", trigger: 'blur' },
+        ],
+        email:[
+          { required: true, message: "What's your email address", trigger: 'blur' },
+          { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
+        ],
+        message:[
+          { required: true, message: "What do you wanna tell me?", trigger: 'blur' },
+          { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
+        ]
+      },
+  }
+},
+
 }
 </script>
 
 <style>
-.el-form {
+.form {
   width: 100%;
   margin: 0 auto;
 }
@@ -124,30 +109,55 @@ export default {
   text-align: left;
 }
 
-.el-form--label-top .el-form-item__label {
-  padding: 0px;
-  line-height: 30px;
-}
-
 .noAlign {
   align-items: flex-start;
   flex-wrap:wrap;
   justify-content: space-around;
 }
-
-.el-button.el-button--default{
-	border:1px solid #3550B2;
-	color: #3550B2;
-	margin: 5px;
+.formItem{
+	margin-bottom: 10px;
 }
+
+.formItem label{
+  line-height: 30px;
+	font-size: 1.5em;
+}
+
+.formItem input[type='text'] {
+  width:100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.formItem input[type='email'] {
+  width:100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.formItem textarea{
+  width:100%;
+	padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
 
 .button{
 	border-radius: 20px;
 	padding: 12px 23px;
 	font-size: 14px;
 	border: 1px solid #3550B2;
-	background: white;
 	color: #3550B2;
+	background: white;
 	line-height: 1;
 	transition: .1s;
 }
@@ -157,8 +167,8 @@ export default {
 	padding: 12px 23px;
 	font-size: 14px;
 	border: 1px solid #3550B2;
-	background: #3550B2;
 	color: white;
+	background: #3550B2;
 	cursor: pointer;
 }
 </style>
