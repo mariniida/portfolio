@@ -23,35 +23,28 @@
       <div class="flexItem half">
         <h1>Form</h1>
 
-				<form class="formrun"
-				action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post"
-				data-formrun-saving="true">
+				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post" data-formrun-saving="true">
 					<div class="formItem alignLeft">
 						<label>Name</label>
-					  <input class="text" data-formrun-required type="text" name="name">
+					  <input class="text" data-formrun-required type="text" name="Name">
 					</div>
 
 					<div class="formItem alignLeft">
 						  <label>Email Address</label>
-						  <input data-formrun-type="email" data-formrun-required name="email" class="text">
+						  <input data-formrun-type="email" data-formrun-required name="Email address" class="text">
 							 <div data-formrun-show-if-error="email">Please check your email</div>
 					</div>
 
 					<div class="formItem alignLeft">
 					  <label>Message</label>
-					  <textarea data-formrun-required name="message" minlength="10" class="textarea"></textarea>
-						<div data-formrun-show-if-error="message">お問い合わせ入力してください</div>
+					  <textarea data-formrun-required name="Message" minlength="10" class="textarea"></textarea>
+						<div data-formrun-show-if-error="message">Please input some message.</div>
 					</div>
 
-					<div class="g-recaptcha"
-					data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
-
-				  <button type="submit"
-					class="button round"
-					data-formrun-error-text="Cannot submit"
-					data-formrun-submitting-text="Sending...">Submit
+				  <button type="submit" class="button round" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit
 				</button>
 				</form>
+
       </div>
     </div>
   </div>
@@ -64,8 +57,6 @@ export default {
   name: 'Contact',
   data () {
     return {
-			success:false,
-			error:false,
       contactDetail:{
         type: 'emailAddress',
         detail: 'mariniida114@gmail.com',
@@ -82,19 +73,6 @@ export default {
           icon:'el-icon-download',
           url:'https://my.indeed.com/p/69cw2g1'
       }],
-      rules: {
-        name: [
-          { required: true, message: "What's your name", trigger: 'blur' },
-        ],
-        email:[
-          { required: true, message: "What's your email address", trigger: 'blur' },
-          { type: 'email', message: 'Please input correct email address', trigger: ['blur', 'change'] }
-        ],
-        message:[
-          { required: true, message: "What do you wanna tell me?", trigger: 'blur' },
-          { min: 3, max: 2000, message: 'Length should be 3 to 2000', trigger: 'blur' }
-        ]
-      },
   	}
 	}
 }
@@ -102,14 +80,7 @@ export default {
 
 <style>
 
-._formrun_gotcha{
-	position:absolute!important;
-	height:1px;
-	width:1px;
-	overflow:hidden;
-}
-
-.form {
+.formrun {
   width: 100%;
   margin: 0 auto;
 }
@@ -123,6 +94,7 @@ export default {
   flex-wrap:wrap;
   justify-content: space-around;
 }
+
 .formItem{
 	margin-bottom: 10px;
 }
@@ -140,7 +112,6 @@ export default {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 }
-
 
 .formItem .textarea{
   width:100%;
