@@ -11,7 +11,7 @@
         :name="workType">{{workType}}</el-tab-pane>
       </el-tabs>
 -->
-      <div v-loading="loading" class="section flexContainer tileContainer">
+      <div v-loading.fullscreen="loading" class="section flexContainer tileContainer">
           <div class="thumbnail flexItem"v-for="(work, index) in works" >
             <router-link :to="linkResolver(work)">
               <div class="thumbnail-overlay"></div>

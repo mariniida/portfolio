@@ -15,12 +15,12 @@
 <script>
 export default {
   props: ['slice'],
-  name: 'image-gallery'
+  name: 'image-gallery',
+
 }
 </script>
 
 <style scoped>
-
 .el-image {
   height:100%;
 }
