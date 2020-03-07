@@ -32,7 +32,7 @@ ul {
 }
 
 .el-loading-spinner .path {
-	stroke: #3550B2;
+	stroke: #3550B2 !important;
 }
 
 /* flexBox */
