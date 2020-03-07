@@ -43,7 +43,7 @@
 
 					<div class="g-recaptcha" data-sitekey="6LcAct8UAAAAANRKzaeEbNFqcTUZYXR2Q-JssqCX"></div>
 
-				  <button type="submit" class="button" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit</button>
+				  <button type="submit" class="button round" data-formrun-error-text="Cannot submit" data-formrun-submitting-text="Sending...">Submit</button>
 				</form>
 
       </div>
@@ -137,9 +137,12 @@ export default {
 	border: 1px solid #ccc;
 }
 
+.round{
+	border-radius: 20px;
+}
 
 .button{
-	border-radius: 20px;
+	margin: 5px;
 	padding: 12px 23px;
 	font-size: 14px;
 	border: 1px solid #3550B2;
@@ -150,7 +153,6 @@ export default {
 }
 
 .button:hover{
-	border-radius: 20px;
 	padding: 12px 23px;
 	font-size: 14px;
 	border: 1px solid #3550B2;
