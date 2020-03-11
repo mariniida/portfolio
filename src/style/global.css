@@ -39,6 +39,14 @@ li{
   text-align: right;
 }
 
+.sliceImg{
+  width: 45em;
+}
+
+.sliceText{
+    width: 45em;
+}
+
 /* flexBox */
 .flexContainer {
   display: flex;

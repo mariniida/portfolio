@@ -130,14 +130,14 @@ export default {
 }
 
 .darkSquare{
-  background-color: #494CA2;
+  background-color: #3550B2;
   height: 1.75em;
   width: 1.75em;
   margin: 5px;
 }
 
 .lightSquare{
-  background-color: #E3E7F1;
+  background-color: #b9c4ed;
   height: 1.75em;
   width: 1.75em;
   margin: 5px;

@@ -10,14 +10,16 @@
 				</div>
 			</el-image>
     </div>
-    <slices-block :slices="work.slices"/>
 
-    <p class="themeColor">
+    <p >
 			{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
     <div class="section description">
       <prismic-rich-text :field="work.description"/>
       <!-- <p>{{$prismic.richTextAsPlain(work.description)}}</p>-->
     </div>
+
+		<slices-block :slices="work.slices"/>
+
 </div>
 </template>
 
@@ -76,7 +78,7 @@ export default {
 <style>
 .workLP {
   margin: 0 auto;
-  width: 90%;
+  width: 50%;
 }
 
 .description {
