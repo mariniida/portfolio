@@ -6,7 +6,7 @@
 
 		<ul>
 				<li v-for="item in slice.items" :key="item.id">
-					<div class="block-img" >
+					<div class="width80 imgMax600">
 						<prismic-image :field="item.image"/>
 					</div>
           <p class="image-label">
@@ -28,12 +28,10 @@ export default {
 <style>
 
 img {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
-.block-img {
-  margin-bottom: 24px;
-}
+
 .image-label {
   display: block;
   text-align: center;
@@ -42,12 +40,4 @@ img {
   color: #949494;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  /* Blog post images */
-  .block-img.emphasized {
-    width: 130%;
-    margin: 0 -15% 2rem -15%;
-  }
-}
 </style>

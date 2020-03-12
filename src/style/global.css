@@ -6,8 +6,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #707070;
+  color: #333333;
 }
+
 
 ul {
   list-style: none;
@@ -27,7 +28,7 @@ li{
 }
 
 .section {
-  margin: 80px 0px;
+  margin: 60px 0px;
 }
 
 .width80{
@@ -35,11 +36,19 @@ li{
   margin: 0 auto;
 }
 
-.textCenter{
+.textRight{
   text-align: right;
 }
 
-.sliceImg{
+.textLeft{
+  text-align: left;
+}
+
+.strictLine{
+  line-break: strict;
+}
+
+.halfImg{
   width: 45em;
 }
 
@@ -71,7 +80,6 @@ li{
   --white:#FFFFFF;
   --keyColor:#3550B2;
 }
-
 
 /* font sizes */
 html {
@@ -127,19 +135,19 @@ el-image.responsive {
 }
 
 .el-loading-spinner .path {
-	stroke: #3550B2 !important;
+	stroke: "var(--keyColor)" !important;
 }
 
 .el-button{
 	margin: 5px !important;
-	border: 1px solid #3550B2 !important;
-	color: #3550B2 !important;
+	border: 1px solid "var(--keyColor)" !important;
+	color: "var(--keyColor)" !important;
 }
 
 .el-button:hover{
-	border: 1px solid #3550B2 !important;
+	border: 1px solid "var(--keyColor)" !important;
 	color: white !important;
-	background: #3550B2 !important;
+	background: "var(--keyColor)" !important;
 	cursor: pointer;
 }
 
@@ -147,4 +155,19 @@ el-image.responsive {
   vertical-align: middle;
   text-align: center;
   margin: 15px;
+}
+
+/* Prismic specific settings */
+#prismic ul{
+  list-style: circle;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 2px;
+}
+
+#prismic li{
+  list-style: circle;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin: 2px;
 }

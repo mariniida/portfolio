@@ -37,7 +37,7 @@
     <div class="section"> <!--Skills section-->
       <h1>Skills</h1>
       <div class="flexContainer tileContainer">
-        <div v-for="(skill, index) in skills" class="flexItem textCenter">
+        <div v-for="(skill, index) in skills" class="flexItem textRight">
           <h3>{{skill.name}}</h3>
           <ul class="boxContainer">
             <li v-for="n in skill.level" class="box">
@@ -130,7 +130,7 @@ export default {
 }
 
 .darkSquare{
-  background-color: #3550B2;
+  background-color: "var(--keyColor)";
   height: 1.75em;
   width: 1.75em;
   margin: 5px;

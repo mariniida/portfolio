@@ -14,6 +14,12 @@
                 <text-slice :slice="slice"></text-slice>
             </template>
 
+						<!-- Text with title slice template -->
+            <template v-else-if="slice.slice_type === 'text_with_title'">
+                <!-- Here :slice="slice" passes the data to the component -->
+                <text-title-slice :slice="slice"></text-title-slice>
+            </template>
+
 						<!-- Image with caption template -->
 						<template v-else-if="slice.slice_type === 'image_with_caption'">
                 <image-caption-slice :slice="slice"></image-caption-slice>
@@ -39,6 +45,8 @@
 	import embedLinkSlice from './slices/embedLink.vue';
 	import bannerSlice from './slices/bannerSlice.vue';
 	import ImageCaptionSlice from './slices/ImageCaptionSlice.vue';
+	import TextWithTitleSlice from './slices/TextWithTitleSlice.vue';
+
 
 export default {
   props: ['slices'],
@@ -48,7 +56,8 @@ export default {
 		ImageCaptionSlice,
 		TextSlice,
 		embedLinkSlice,
-		bannerSlice
+		bannerSlice,
+		TextWithTitleSlice
   },
 }
 </script>

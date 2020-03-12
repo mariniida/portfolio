@@ -1,25 +1,22 @@
 <template>
-  <div class="page">
-    <div class="workLP">
-      <h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
-      <el-image
-        :src="work.landingImg.url"
-        fit="contain">
-				<div slot="placeholder" class="slot">
-					<p class="slottext">Loading...</p>
+  <div v-loading.fullscreen="loading" class="page width80">
+			<h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
+			<p>{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
+			<div class="section">
+		    <div class="flexContainer tileContainer">
+					<el-image class="flexItem workLPImage halfImg"
+		        :src="work.landingImg.url"
+		        fit="contain">
+						<div slot="placeholder" class="slot">
+							<p class="slottext">Loading...</p>
+						</div>
+					</el-image>
+					<div class="flexItem section description">
+			      <prismic-rich-text class="textLeft " :field="work.description"/>
+					</div>
 				</div>
-			</el-image>
-    </div>
-
-    <p >
-			{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
-    <div class="section description">
-      <prismic-rich-text :field="work.description"/>
-      <!-- <p>{{$prismic.richTextAsPlain(work.description)}}</p>-->
-    </div>
-
-		<slices-block :slices="work.slices"/>
-
+		</div>
+		<slices-block class="prismic" :slices="work.slices"/>
 </div>
 </template>
 
@@ -43,6 +40,7 @@ export default {
         description: '',
         slices: [],
       },
+			loading: true,
 
     }
   },
@@ -58,6 +56,7 @@ export default {
           this.work.tag = document.data.tag
           this.work.description = document.data.description
           this.work.slices = document.data.body
+					this.loading=false;
 
         } else {
           this.$router.push({ name: 'not-found' })
@@ -76,14 +75,13 @@ export default {
 </script>
 
 <style>
-.workLP {
-  margin: 0 auto;
+.workLPImage {
   width: 50%;
+	height: auto;
 }
 
 .description {
-  margin: 0 auto;
-  padding: 20px;
-  width: 80%;
+  width: 45%;
 }
+
 </style>

@@ -1,16 +1,21 @@
 <template>
   <div class="section">
-    <el-carousel trigger="click" max-height="500px"
+		<prismic-rich-text :field="slice.primary.name_of_the_gallery"/>
+    <el-carousel trigger="click" max-height="600px"
         indicator-position="outside"
-        arrow="always">
-        <el-carousel-item v-for="(item, index) in slice.items"  :key="index">
-          <el-image
+        arrow="always" class="width80">
+        <el-carousel-item v-for="(item, index) in slice.items" :key="index">
+					<div v-for="(caption, index) in item.image_captions" :key="index">
+						<h5 class="caption">{{caption.text}}</h5>
+					</div>
+					<el-image
           :src="item.gallery_image.url"
           fit="contain" >
-					<div slot="placeholder" class="slot">
-						<p class="slottext">Loading...</p>
-					</div>
-				</el-image>
+						<div slot="placeholder" class="slot">
+							<p class="slottext">Loading...</p>
+						</div>
+					</el-image>
+
         </el-carousel-item>
     </el-carousel>
   </div>
@@ -27,5 +32,10 @@ export default {
 <style scoped>
 .el-image {
   height:100%;
+}
+
+.caption{
+	font-style: italic;
+	opacity: 80%;
 }
 </style>
