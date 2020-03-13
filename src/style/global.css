@@ -9,19 +9,7 @@
   color: #333333;
 }
 
-
-ul {
-  list-style: none;
-}
-
-li{
-  list-style: none;
-}
-
-.box{
-  display: inline-block;
-}
-
+/* Layout Settings*/
 .page {
   padding: 20px;
   margin-bottom: 30px;
@@ -36,6 +24,12 @@ li{
   margin: 0 auto;
 }
 
+.halfWidth{
+  width: 45em;
+}
+
+
+/* Text Setting */
 .textRight{
   text-align: right;
 }
@@ -44,16 +38,16 @@ li{
   text-align: left;
 }
 
+ul {
+  list-style: none;
+}
+
+li{
+  list-style: none;
+}
+
 .strictLine{
   line-break: strict;
-}
-
-.halfImg{
-  width: 45em;
-}
-
-.sliceText{
-    width: 45em;
 }
 
 /* flexBox */
@@ -88,37 +82,45 @@ html {
 
 h1 {
   font-weight: 600;
-  font-size: 3em;
+  font-size: 3rem;
   margin: 20px 0px;
 }
 
 h2 {
   font-weight: 400;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 10px 0px;
 }
 
 h3 {
   font-weight: 300;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0px;
 }
 
 h4{
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 4px 0px;
 }
 
 h5{
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 2px;
+}
+
+h6{
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 0px;
+  color: #3550B2;
+
 }
 
 p {
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 2px;
 }
 
@@ -135,19 +137,19 @@ el-image.responsive {
 }
 
 .el-loading-spinner .path {
-	stroke: "var(--keyColor)" !important;
+	stroke: #3550B2 !important;
 }
 
 .el-button{
 	margin: 5px !important;
-	border: 1px solid "var(--keyColor)" !important;
-	color: "var(--keyColor)" !important;
+	border: 1px solid #3550B2 !important;
+	color: #3550B2 !important;
 }
 
 .el-button:hover{
-	border: 1px solid "var(--keyColor)" !important;
+	border: 1px solid #3550B2 !important;
 	color: white !important;
-	background: "var(--keyColor)" !important;
+	background: #3550B2 !important;
 	cursor: pointer;
 }
 
@@ -158,16 +160,9 @@ el-image.responsive {
 }
 
 /* Prismic specific settings */
-#prismic ul{
-  list-style: circle;
-  font-weight: 300;
-  font-size: 1.5em;
-  margin: 2px;
-}
-
 #prismic li{
   list-style: circle;
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 2px;
 }

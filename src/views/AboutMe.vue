@@ -95,6 +95,11 @@ export default {
 </script>
 
 <style scoped>
+
+.box{
+  display: inline-block;
+}
+
 .lineButtom{
   position: relative;
   display: inline-block;
@@ -130,7 +135,7 @@ export default {
 }
 
 .darkSquare{
-  background-color: "var(--keyColor)";
+  background-color: #3550B2;
   height: 1.75em;
   width: 1.75em;
   margin: 5px;

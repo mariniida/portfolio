@@ -4,7 +4,7 @@
 			<p>{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
 			<div class="section">
 		    <div class="flexContainer tileContainer">
-					<el-image class="flexItem workLPImage halfImg"
+					<el-image class="flexItem workLPImage halfWidth"
 		        :src="work.landingImg.url"
 		        fit="contain">
 						<div slot="placeholder" class="slot">

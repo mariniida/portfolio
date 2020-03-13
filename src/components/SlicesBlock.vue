@@ -10,14 +10,12 @@
 
 						<!-- Text slice template -->
             <template v-else-if="slice.slice_type === 'text'">
-                <!-- Here :slice="slice" passes the data to the component -->
                 <text-slice :slice="slice"></text-slice>
             </template>
 
 						<!-- Text with title slice template -->
             <template v-else-if="slice.slice_type === 'text_with_title'">
-                <!-- Here :slice="slice" passes the data to the component -->
-                <text-title-slice :slice="slice"></text-title-slice>
+                <TextWithTitleSlice :slice="slice"></TextWithTitleSlice>
             </template>
 
 						<!-- Image with caption template -->
@@ -57,7 +55,7 @@ export default {
 		TextSlice,
 		embedLinkSlice,
 		bannerSlice,
-		TextWithTitleSlice
+		TextWithTitleSlice,
   },
 }
 </script>
