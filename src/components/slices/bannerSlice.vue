@@ -1,8 +1,11 @@
 <template>
-  <div class="section">
-	 	<prismic-rich-text :field="slice.primary.bannertitle"/>
+  <div>
+		<div v-if="$prismic.richTextAsPlain(slice.primary.bannertitle) != ''">
+	 		<prismic-rich-text id="prismic" :field="slice.primary.bannertitle"/>
+		</div>
 		<ul>
-				<li class="flexContainer tileContainer" v-for="item in slice.items" :key="item.id">
+				<li class="flexContainer tileContainer"
+				v-for="item in slice.items" :key="item.id">
 					<div class="flexItem halfWidth">
 						<el-image
 			        :src="item.bannerimg.url"
@@ -11,6 +14,7 @@
 					<div class="flexItem halfWidth textLeft" id="prismic">
 						<prismic-rich-text :field="item.bannertext"/>
           </div>
+					<div class="dashed"></div>
 				</li>
 		</ul>
   </div>

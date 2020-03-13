@@ -28,6 +28,12 @@
   width: 45em;
 }
 
+.dashed{
+  border-bottom: 1px dashed #e7e7e7;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /* Text Setting */
 .textRight{
@@ -83,19 +89,19 @@ html {
 h1 {
   font-weight: 600;
   font-size: 3rem;
-  margin: 20px 0px;
+  margin: 25px 0px;
 }
 
 h2 {
   font-weight: 400;
   font-size: 2rem;
-  margin: 10px 0px;
+  margin: 20px 0px;
 }
 
 h3 {
   font-weight: 300;
   font-size: 2rem;
-  margin: 0px;
+  margin: 10px 0px;
 }
 
 h4{
@@ -115,7 +121,6 @@ h6{
   font-size: 2rem;
   margin: 0px;
   color: #3550B2;
-
 }
 
 p {
@@ -159,10 +164,24 @@ el-image.responsive {
   margin: 15px;
 }
 
+
 /* Prismic specific settings */
 #prismic li{
   list-style: circle;
   font-weight: 300;
   font-size: 1.5rem;
   margin: 2px;
+}
+
+#prismic h2{
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin: 50px 0px 20px 0px;
+  text-transform: uppercase;
+}
+
+#prismic h3{
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 20px 0px 0px 0px;
 }

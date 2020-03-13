@@ -1,7 +1,7 @@
 <template>
 	<div class="section">
 	 	<div v-if="$prismic.richTextAsPlain(slice.primary.captiontitle) != ''">
-			  <prismic-rich-text :field="slice.primary.captiontitle"/>
+			  <prismic-rich-text id="prismic" :field="slice.primary.captiontitle"/>
 		</div>
 
 		<ul>

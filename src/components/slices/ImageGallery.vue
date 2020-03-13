@@ -1,6 +1,8 @@
 <template>
   <div class="section">
-		<prismic-rich-text :field="slice.primary.name_of_the_gallery"/>
+		<div v-if="$prismic.richTextAsPlain(slice.primary.name_of_the_gallery) != ''">
+			<prismic-rich-text id="prismic" :field="slice.primary.name_of_the_gallery"/>
+		</div>
     <el-carousel trigger="click" max-height="600px"
         indicator-position="outside"
         arrow="always" class="width80">
