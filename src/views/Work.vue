@@ -17,8 +17,8 @@
 					</div>
 				</div>
 			</div>
-			<el-collapse>
-			  <el-collapse-item title="詳細を見る" name="1">
+			<el-collapse class="width80">
+			  <el-collapse-item title="詳細を見る" name="1" >
 			    <slices-block :slices="work.slices"/>
   		</el-collapse-item>
 		</el-collapse>
