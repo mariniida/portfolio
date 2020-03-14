@@ -25,7 +25,7 @@ Vue.use(PrismicVue,{
   htmlSerializer: htmlSerializer,
   apiOptions: { accessToken }
 });
-//Vue.config.productionTip = false
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({

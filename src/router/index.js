@@ -16,13 +16,9 @@ export default new Router({
       redirect: { path: '/work' }
     },
     {
-      path: '/not-found',
+      path: '*',
       name: 'not-found',
       component: NotFound
-    },
-    {
-      path: '*',
-      redirect: { path: '/not-found' }
     },
     {
       path: '/aboutme',
