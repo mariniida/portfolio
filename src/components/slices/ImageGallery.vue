@@ -5,7 +5,7 @@
 		</div>
     <el-carousel trigger="click" max-height="600px"
         indicator-position="outside"
-        arrow="always" class="width80">
+        arrow="always" class="responsiveWidth">
         <el-carousel-item v-for="(item, index) in slice.items" :key="index">
 					<div v-for="(caption, index) in item.image_captions" :key="index">
 						<h5 class="caption">{{caption.text}}</h5>

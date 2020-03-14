@@ -1,5 +1,5 @@
 <template>
-  <div class='post-part single container'>
+  <div class='link'>
   	<prismic-embed :field="slice.primary.url"/>
   </div>
 </template>
@@ -10,3 +10,20 @@ export default {
   name: 'embedLinkSlice'
 }
 </script>
+
+<style>
+
+.link{
+	position: relative;
+	padding-top: 50%;
+	margin: 0 auto;
+}
+
+.link iframe{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+}
+</style>

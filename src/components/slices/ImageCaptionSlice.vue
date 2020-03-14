@@ -6,7 +6,7 @@
 
 		<ul>
 				<li v-for="item in slice.items" :key="item.id">
-					<div class="width80 imgMax600">
+					<div class="responsiveWidth">
 						<prismic-image :field="item.image"/>
 					</div>
           <p class="image-label">
@@ -34,5 +34,7 @@ export default {
   font-size: 14px;
   color: #949494;
 }
+
+
 
 </style>

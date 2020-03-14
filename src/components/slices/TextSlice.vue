@@ -1,6 +1,6 @@
 <template>
   <div>
-    	<prismic-rich-text id="prismic" class="width80 textLeft" :field="slice.primary.paragraph"/>
+    	<prismic-rich-text id="prismic" class="responsiveWidth textLeft" :field="slice.primary.paragraph"/>
   </div>
 </template>
 
