@@ -9,6 +9,5 @@ export default function (doc) {
    return '/not-found';
  }
 
-  // Default to the root
-  return '/work';
+  return '/not-found';
 };

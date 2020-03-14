@@ -39,6 +39,5 @@ export default new Router({
       path: '/work/:uid',
       name: 'work',
       component: Work
-  }
-  ]
+  }]
 })
