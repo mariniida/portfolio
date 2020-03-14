@@ -1,5 +1,5 @@
 <template>
-  <div v-loading.fullscreen="loading" class="page width80">
+  <div v-loading.fullscreen="loading" class="page">
 			<h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
 			<p>{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
 
