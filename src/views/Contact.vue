@@ -14,7 +14,7 @@
               :href="link.url">
               <el-button class="button">
                 <i :class="link.icon"></i>
-              	{{link.name}}yay
+              	{{link.name}}
               </el-button>
               </a>
             </li>
