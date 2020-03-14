@@ -28,8 +28,5 @@ export default {
 </script>
 
 <style>
-img{
-	width: 80%;
-}
 
 </style>

@@ -2,6 +2,7 @@
   <div v-loading.fullscreen="loading" class="page width80">
 			<h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
 			<p>{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
+
 			<div class="section">
 		    <div class="flexContainer tileContainer">
 					<el-image class="flexItem halfWidth"
@@ -15,10 +16,12 @@
 			      <prismic-rich-text class="textLeft " :field="work.description"/>
 					</div>
 				</div>
-		</div>
-		<el-divider></el-divider>
-
-		<slices-block class="prismic" :slices="work.slices"/>
+			</div>
+			<el-collapse>
+			  <el-collapse-item title="詳細を見る" name="1">
+			    <slices-block :slices="work.slices"/>
+  		</el-collapse-item>
+		</el-collapse>
 </div>
 </template>
 
@@ -43,7 +46,6 @@ export default {
         slices: [],
       },
 			loading: true,
-
     }
   },
   methods: {
@@ -59,7 +61,6 @@ export default {
           this.work.description = document.data.description
           this.work.slices = document.data.body
 					this.loading=false;
-
         } else {
           this.$router.push({ name: 'not-found' })
         }
@@ -77,7 +78,6 @@ export default {
 </script>
 
 <style>
-
 .description {
   width: 450px;
 }

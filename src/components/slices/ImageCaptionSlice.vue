@@ -27,11 +27,6 @@ export default {
 
 <style>
 
-img {
-  width: 80%;
-  height: auto;
-}
-
 .image-label {
   display: block;
   text-align: center;

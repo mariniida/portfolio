@@ -32,8 +32,9 @@ export default {
 </script>
 
 <style scoped>
+
 .el-image {
-  height:100%;
+  height:90%;
 }
 
 .caption{
