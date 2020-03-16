@@ -45,7 +45,6 @@ img {
   margin: 0 auto;
 }
 
-
 /* Text Setting */
 .textRight {
   text-align: right;
@@ -57,10 +56,6 @@ img {
 
 ul, li {
   list-style: none;
-}
-
-ul, ol {
-  padding-inline-start: 0px;
 }
 
 .strictLine {
@@ -206,6 +201,7 @@ el-image.responsive {
   font-size: 2rem;
   margin: 20px 0px 0px 0px;
 }
+
 
 
 /* Media query*/

@@ -1,11 +1,14 @@
 <template>
   <div class="page width80">
+
     <div class="flexContainer noAlign width80">
+
       <div class="flexItem half">
-        <div class="section">
+        <div class="section dashed">
           <h1>Contacts</h1>
-            <h3>{{contactDetail.detail}}</h3>
+          <h3>{{contactDetail.detail}}</h3>
         </div>
+
         <div class="section">
           <h1>Links</h1>
             <li v-for="(link, index) in links">
@@ -20,9 +23,9 @@
             </li>
         </div>
       </div>
+
       <div class="flexItem half">
         <h1>Form</h1>
-
 				<form class="formrun" action="https://form.run/api/v1/r/99geppst41wljcxbwbyen71t" method="post" data-formrun-saving="true">
 					<div class="formItem alignLeft">
 						<label>Name</label>
@@ -81,9 +84,11 @@ export default {
   width: 100%;
   margin: 0 auto;
 }
+
 .alignLeft {
   text-align: left;
 }
+
 .noAlign {
   align-items: flex-start;
   flex-wrap: wrap;
