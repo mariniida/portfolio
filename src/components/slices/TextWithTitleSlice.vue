@@ -12,3 +12,7 @@ export default {
   name: 'TextWithTitleSlice'
 }
 </script>
+
+<style>
+
+</style>

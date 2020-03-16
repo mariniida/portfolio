@@ -42,7 +42,11 @@
 img {
   width: 80%;
   height: auto;
-  margin: 0 auto;
+  margin: auto 0;
+}
+
+.block-img{
+  text-align: center;
 }
 
 /* Text Setting */
@@ -57,6 +61,11 @@ img {
 ul, li {
   list-style: none;
 }
+
+ul{
+  padding-inline-start:0px;
+}
+
 
 .strictLine {
   line-break: strict;
@@ -191,9 +200,28 @@ el-image.responsive {
 #prismic h2{
   font-weight: 500;
   font-size: 2.5rem;
-  margin: 50px 0px 20px 0px;
   text-transform: uppercase;
-  text-align: center;
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+#prismic h2:before, #prismic h2:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+#prismic h2:before {
+  left:0;
+}
+
+#prismic h2:after {
+  right: 0;
 }
 
 #prismic h3{
@@ -239,7 +267,8 @@ el-image.responsive {
 
    .responsiveWidth{
      width: 80%;
-    margin: 0 auto;
+     margin: 0 auto;
    }
+
 
 }
