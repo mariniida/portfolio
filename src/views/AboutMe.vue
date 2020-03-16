@@ -18,7 +18,7 @@
     </div>
 		<el-divider></el-divider>
     <div class="section"> <!--Timeline section-->
-      <h1>Timeline</h1>
+      <h1 class="timeline">Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"
         class="flexContainer">
           <div class="flexItem left">
@@ -26,7 +26,7 @@
             <h5>{{timelineEvent.endDate}}</h5>
           </div>
           <div class="flexItem right">
-            <h2>{{timelineEvent.heading}}</h2>
+            <a :href="timelineEvent.link" target="_blank"><h2>{{timelineEvent.heading}}</h2></a>
             <div class="event">
               <h4>{{timelineEvent.subHeading}}</h4>
               <p>{{timelineEvent.description}}</p>
@@ -34,7 +34,7 @@
           </div>
         </li>
     </div>
-    <div class="section"> <!--Skills section-->
+    <div class="section margin60"> <!--Skills section-->
       <h1>Skills</h1>
       <div class="flexContainer tileContainer">
         <div v-for="(skill, index) in skills" class="flexItem textRight">
@@ -69,12 +69,14 @@ export default {
           startDate:'2012 Feb',
           endDate:'2016 Nov',
           heading:'Somerset College',
+					link:'https://www.somerset.qld.edu.au/'
         },{
           startDate:'2017 Feb',
           endDate:'2019 Dec',
           heading:'University of Melbourne',
           subHeading:'Bachelor of Design',
           description:'Majored in Digital Technologies and minored in Graphic Design and Computing.',
+					link:'https://www.unimelb.edu.au/',
         }
       ],
       skills:[
@@ -154,4 +156,14 @@ export default {
       display:none;
   }
 }
+a:-webkit-any-link {
+    color: #3550B2;
+		text-decoration: none;
+}
+
+
+.margin60{
+	margin: 60px 0px;
+}
+
 </style>
