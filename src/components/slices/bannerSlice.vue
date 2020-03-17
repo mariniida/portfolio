@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="subsection">
 		<div v-if="$prismic.richTextAsPlain(slice.primary.bannertitle) != ''">
 	 		<prismic-rich-text id="prismic" :field="slice.primary.bannertitle"/>
 		</div>
