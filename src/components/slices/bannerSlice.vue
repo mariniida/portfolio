@@ -13,7 +13,6 @@
 					<div class="flexItem halfWidth textLeft" id="prismic">
 						<prismic-rich-text :field="item.bannertext"/>
           </div>
-					<div class="dashed"></div>
 				</li>
   </div>
 </template>

@@ -66,6 +66,10 @@ ul{
   padding-inline-start:0px;
 }
 
+ol{
+  text-align: left;
+}
+
 
 .strictLine {
   line-break: strict;
@@ -144,6 +148,57 @@ p {
   margin: 2px;
 }
 
+/* Prismic specific settings */
+#prismic li{
+  list-style: circle;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin: 2px;
+}
+
+#prismic h2{
+  font-weight: 500;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding: 0 55px;
+}
+
+#prismic h2:before, #prismic h2:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  width: 45px;
+  height: 1px;
+  background-color: black;
+}
+
+#prismic h2:before {
+  left:0;
+}
+
+#prismic h2:after {
+  right: 0;
+}
+
+#prismic h3{
+  font-weight: 300;
+  font-size: 2rem;
+  margin: 20px 0px 0px 0px;
+
+  padding: .5em .75em .25em .75em;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+}
+
+#prismic p{
+  text-align: left;
+}
+
+
+
 /* element-ui */
 el-divider{
   font-weight: 300;
@@ -187,50 +242,6 @@ el-image.responsive {
 .el-collapse, .el-collapse-item__header, .el-collapse-item__wrap {
   border-bottom: 1px solid #AEB8DE !important;
 }
-
-
-/* Prismic specific settings */
-#prismic li{
-  list-style: circle;
-  font-weight: 300;
-  font-size: 1.5rem;
-  margin: 2px;
-}
-
-#prismic h2{
-  font-weight: 500;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  padding: 0 55px;
-}
-
-#prismic h2:before, #prismic h2:after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  display: inline-block;
-  width: 45px;
-  height: 1px;
-  background-color: black;
-}
-
-#prismic h2:before {
-  left:0;
-}
-
-#prismic h2:after {
-  right: 0;
-}
-
-#prismic h3{
-  font-weight: 300;
-  font-size: 2rem;
-  margin: 20px 0px 0px 0px;
-}
-
-
 
 /* Media query*/
 
