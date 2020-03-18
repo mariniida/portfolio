@@ -5,6 +5,8 @@ import Contact from '@/views/Contact'
 import Work from '@/views/Work'
 import Works from '@/views/workPreviews'
 import NotFound from '@/views/NotFound'
+import Landing from '@/views/LP'
+
 
 Vue.use(Router)
 
@@ -18,6 +20,11 @@ export default new Router({
       path: '*',
       name: 'not-found',
       component: NotFound
+    },
+    {
+      path: '/landing',
+      name: 'Landing',
+      component: Landing
     },
     {
       path: '/aboutme',

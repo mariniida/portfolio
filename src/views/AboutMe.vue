@@ -1,9 +1,10 @@
 <template>
   <div class="page width80">
-    <div class="section flexContainer tileContainer"> <!--Profile section-->
+		<!--Profile section-->
+    <div class="section flexContainer tileContainer">
 
-      <el-image class="flexItem display-none"
-       style="width: 200px; height: 250px"
+      <el-image class="flexItem"
+       style="width: 300px; height: 450px"
        :src="profile.img" fit="cover">
 				 <div slot="placeholder">
 		       <h4 class="slottext">Loading...</h4>
@@ -11,13 +12,21 @@
 			</el-image>
 
       <div class="flexItem">
-        <h1>{{profile.tagLine}}</h1>
-        <h3>{{profile.bio}}</h3>
+				<div class="section">
+					<p>岐阜県に生まれ、１３歳で家族とオーストラリアに移住。</p>
+					<p>慣れないながら新しい環境で勉学に励むも、英語力以外のスキルを得たいと強く感じました。</p>
+					<p>「国や言語の垣根を超えたスキルとはなんだろう。」と考えた結果デザイン職に興味を持ち、メルボルン大学でデザイン学部に進学しました。</p>
+						<p>大学ではデジタルテクノロジーを専攻しHCIについて学びながら、グラフィックデザインとコンピューティングを副専攻。UI/UX、ゲームデザイン、ブランディング、ウェブサイト制作など、幅広い種類の課題に取り組みました。</p>
+				</div>
       </div>
 
     </div>
 		<el-divider></el-divider>
-    <div class="section"> <!--Timeline section-->
+
+
+
+		<!--Timeline section-->
+    <div class="section">
       <h1 class="timeline">Timeline</h1>
         <li v-for="(timelineEvent, index) in timelineEvents"
         class="flexContainer">
@@ -36,8 +45,9 @@
     </div>
     <div class="section margin60"> <!--Skills section-->
       <h1>Skills</h1>
+
       <div class="flexContainer tileContainer">
-        <div v-for="(skill, index) in skills" class="flexItem textRight">
+        <div v-for="(skill, index) in skills" class="flexItem textRight skillBox">
           <h3>{{skill.name}}</h3>
           <ul class="boxContainer">
             <li v-for="n in skill.level" class="box">
@@ -61,7 +71,7 @@ export default {
       profile:{
         tagLine:"I'm Marin Iida.",
         bio:"An aspiring UI/UX designer based in Japan (for now).",
-        img: require("../assets/IMG_2338.jpg"),
+        img: require("../assets/IMG_0487.jpg"),
       },
       profileImg: require("../assets/IMG_2338.jpg"),
       timelineEvents:[
@@ -150,12 +160,6 @@ export default {
   margin: 5px;
 }
 
-@media screen and (max-width:480px){
-  /*画面幅が480pxまでの時*/
-  .display-none{
-      display:none;
-  }
-}
 a:-webkit-any-link {
     color: #3550B2;
 		text-decoration: none;
@@ -166,4 +170,14 @@ a:-webkit-any-link {
 	margin: 60px 0px;
 }
 
+.skillBox{
+	width: 190px;
+}
+
+@media screen and (max-width:480px){
+  /*画面幅が480pxまでの時*/
+  .display-none{
+      display:none;
+  }
+}
 </style>

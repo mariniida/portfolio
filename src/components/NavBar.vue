@@ -1,14 +1,17 @@
 <template>
-  <el-menu
-  mode="horizontal"
-	:default-active="activeIndex"
-  :router="true"
-  :active-text-color="activeColor">
-  <el-menu-item index="work" :route="{ name:'Works' }">Works</el-menu-item>
-  <el-menu-item index="contact" :route="{ name:'Contact' }">Contact</el-menu-item>
-  <el-menu-item index="aboutme" :route="{ name:'AboutMe' }">About me</a>
-  </el-menu-item>
-</el-menu>
+	<nav>
+	 <router-link to="/landing" class="navItem navLogo">
+		 <img src="../../static/logo.png">
+	 </router-link>
+		<ul>
+        <router-link tag="li"  to="/work" exact>
+					<a>Works</a></router-link>
+        <router-link tag="li" to="/contact">
+					<a>Contact</a></router-link>
+        <router-link tag="li" to="/aboutme">
+					<a>About me</a></router-link>
+      </ul>
+</nav>
 </template>
 
 <script>
@@ -18,9 +21,77 @@ export default {
     return {
       activeColor: "var(--keyColor)",
 			activeIndex: 'work',
+			pages: [
+        {
+          id: 0,
+          text: 'Works',
+          page:'/works'
+        },
+        {
+          id: 1,
+          text: 'About Me',
+          page:'/aboutme'
+        },
+        {
+          id: 2,
+          text: 'Contact',
+          page:'/contact'
+        }
+      ]
     }
   }
 }
 </script>
 <style>
+
+nav {
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+
+.navItem {
+	display: inline-block;
+}
+
+.navLogo {
+	top: 30px;
+	left: 30px;
+	position: fixed;
+}
+
+.navLogo img {
+	width: 52px;
+	height: 52px;
+}
+
+nav ul {
+	margin: 0 ;
+	padding: 0 ;
+	display: inline-block;
+	line-height: 100px;
+	width: 60%;
+}
+
+nav ul li {
+	list-style: none;
+	display: inline-block;
+	width: 18%;
+	min-width: 90px;
+}
+
+nav ul li a	{
+	text-decoration: none;
+	color: #333;
+	font-size: 1.75rem;
+}
+
+.router-link-active > a {
+  color: #3550B2;
+}
+
+nav ul li a:hover {
+	color: #AEB8DE;
+	transition: 0.1s;
+}
 </style>
