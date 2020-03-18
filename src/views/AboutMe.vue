@@ -11,12 +11,36 @@
 		     </div>
 			</el-image>
 
-      <div class="flexItem">
+      <div class="flexItem description">
 				<div class="section">
+					<h2>飯田まりん</h2>
 					<p>岐阜県に生まれ、１３歳で家族とオーストラリアに移住。</p>
 					<p>慣れないながら新しい環境で勉学に励むも、英語力以外のスキルを得たいと強く感じました。</p>
 					<p>「国や言語の垣根を超えたスキルとはなんだろう。」と考えた結果デザイン職に興味を持ち、メルボルン大学でデザイン学部に進学しました。</p>
 						<p>大学ではデジタルテクノロジーを専攻しHCIについて学びながら、グラフィックデザインとコンピューティングを副専攻。UI/UX、ゲームデザイン、ブランディング、ウェブサイト制作など、幅広い種類の課題に取り組みました。</p>
+				</div>
+				<div>
+					<p><i class="el-icon-message"></i>mariniida114@gmail.com</p>
+
+					<li v-for="(link, index) in links">
+						<a target="_blank"
+						rel="noopener noreferrer"
+						:href="link.url">
+						<el-button class="button">
+							<i :class="link.icon"></i>
+							{{link.name}}
+						</el-button>
+						</a>
+					</li>
+
+					<a target="_blank"
+					rel="noopener noreferrer"
+					:href="Github.url">
+					<el-button class="button">
+						<img class="icon" :src="Github.icon">
+						{{Github.name}}
+					</el-button>
+					</a>
 				</div>
       </div>
 
@@ -101,12 +125,35 @@ export default {
         {name: 'CSS', level: 3},
         {name: 'JavaScript', level: 2},
       ],
+			links:[
+				{
+					name:'Wantedly',
+					icon:'el-icon-user',
+					url:'https://www.wantedly.com/secret_profiles/1h8Wm5W3Bo-i1Ok2u_aFIV_b2uy1eFz9'
+				},
+				{
+					name:'indeed Resume',
+					icon:'el-icon-download',
+					url:'https://my.indeed.com/p/69cw2g1'
+				}],
+				Github:{
+						name:'Github',
+						icon:require("../assets/GitHub-Mark-32px.png"),
+						url:'https://github.com/mariniida'
+				}
+
     }
   },
     }
 </script>
 
 <style scoped>
+
+
+.description{
+	width: 500px;
+	text-align: left;
+}
 
 .box{
   display: inline-block;
