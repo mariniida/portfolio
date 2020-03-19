@@ -6,8 +6,6 @@
 		<ul>
         <router-link tag="li"  to="/work" exact>
 					<a>Works</a></router-link>
-        <router-link tag="li" to="/contact">
-					<a>Contact</a></router-link>
         <router-link tag="li" to="/aboutme">
 					<a>About me</a></router-link>
       </ul>
@@ -32,11 +30,6 @@ export default {
           text: 'About Me',
           page:'/aboutme'
         },
-        {
-          id: 2,
-          text: 'Contact',
-          page:'/contact'
-        }
       ]
     }
   }
@@ -48,6 +41,7 @@ nav {
 	width: 100%;
 	height: 100px;
 	text-align: center;
+	position:relative;
 }
 
 .navItem {
@@ -55,9 +49,9 @@ nav {
 }
 
 .navLogo {
-	top: 30px;
-	left: 30px;
-	position: fixed;
+	top: 20px;
+	left: 20px;
+	position: absolute;
 }
 
 .navLogo img {

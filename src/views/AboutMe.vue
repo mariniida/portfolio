@@ -1,5 +1,6 @@
 <template>
   <div class="page width80">
+
 		<!--Profile section-->
     <div class="section flexContainer tileContainer">
 
@@ -15,39 +16,33 @@
 				<div class="section">
 					<h2>飯田まりん</h2>
 					<p>岐阜県に生まれ、１３歳で家族とオーストラリアに移住。</p>
-					<p>慣れないながら新しい環境で勉学に励むも、英語力以外のスキルを得たいと強く感じました。</p>
-					<p>「国や言語の垣根を超えたスキルとはなんだろう。」と考えた結果デザイン職に興味を持ち、メルボルン大学でデザイン学部に進学しました。</p>
-						<p>大学ではデジタルテクノロジーを専攻しHCIについて学びながら、グラフィックデザインとコンピューティングを副専攻。UI/UX、ゲームデザイン、ブランディング、ウェブサイト制作など、幅広い種類の課題に取り組みました。</p>
+					<p>新しい環境で勉学に励むも、英語力以外のスキルを得たいと強く感じました。</p>
+					<p>「国や言語の垣根を超えたスキルとはなんだろう。」と考えた結果、デザイン職に興味を持ち、メルボルン大学でデザイン学部に進学しました。</p>
+					<p>大学ではデジタルテクノロジーを専攻しHCIについて学びながら、グラフィックデザインとコンピューティングを副専攻。</p>
+					<p>UI/UX、ゲームデザイン、ブランディング、ウェブサイト制作など、幅広い種類の課題に取り組みました。</p>
 				</div>
-				<div>
-					<p><i class="el-icon-message"></i>mariniida114@gmail.com</p>
 
+				<div class="links">
+					<h2>Links</h2>
 					<li v-for="(link, index) in links">
 						<a target="_blank"
 						rel="noopener noreferrer"
 						:href="link.url">
-						<el-button class="button">
-							<i :class="link.icon"></i>
-							{{link.name}}
-						</el-button>
+							<i :class="link.icon"></i>{{link.name}}
 						</a>
 					</li>
-
-					<a target="_blank"
-					rel="noopener noreferrer"
-					:href="Github.url">
-					<el-button class="button">
-						<img class="icon" :src="Github.icon">
-						{{Github.name}}
-					</el-button>
-					</a>
+					<li v-for="(mark, index) in marks" class="marks">
+						<a target="_blank"
+						rel="noopener noreferrer"
+						:href="mark.url">
+								<img class="mark" :src="mark.icon">
+						</a>
+					</li>
 				</div>
       </div>
 
     </div>
 		<el-divider></el-divider>
-
-
 
 		<!--Timeline section-->
     <div class="section">
@@ -58,7 +53,7 @@
             <h5 class=lineButtom>{{timelineEvent.startDate}}</h5>
             <h5>{{timelineEvent.endDate}}</h5>
           </div>
-          <div class="flexItem right">
+          <div class="flexItem right links">
             <a :href="timelineEvent.link" target="_blank"><h2>{{timelineEvent.heading}}</h2></a>
             <div class="event">
               <h4>{{timelineEvent.subHeading}}</h4>
@@ -67,7 +62,9 @@
           </div>
         </li>
     </div>
-    <div class="section margin60"> <!--Skills section-->
+
+		<!--Skills section-->
+    <div class="section margin60">
       <h1>Skills</h1>
 
       <div class="flexContainer tileContainer">
@@ -92,20 +89,20 @@ export default {
   name: 'AboutMe',
   data () {
     return {
-      profile:{
-        tagLine:"I'm Marin Iida.",
-        bio:"An aspiring UI/UX designer based in Japan (for now).",
+      profile: {
+        tagLine: "I'm Marin Iida.",
+        bio: "An aspiring UI/UX designer based in Japan (for now).",
         img: require("../assets/IMG_0487.jpg"),
       },
       profileImg: require("../assets/IMG_2338.jpg"),
-      timelineEvents:[
+      timelineEvents: [
         {
-          startDate:'2012 Feb',
-          endDate:'2016 Nov',
-          heading:'Somerset College',
-					link:'https://www.somerset.qld.edu.au/'
+          startDate: '2012 Feb',
+          endDate: '2016 Nov',
+          heading: 'Somerset College',
+					link: 'https://www.somerset.qld.edu.au/'
         },{
-          startDate:'2017 Feb',
+          startDate: '2017 Feb',
           endDate:'2019 Dec',
           heading:'University of Melbourne',
           subHeading:'Bachelor of Design',
@@ -115,58 +112,65 @@ export default {
       ],
       skills:[
         {name: 'Microsoft Office Suite', level: 3},
+				{name: 'Adobe XD', level: 4},
+				{name: 'Adobe Illustrator', level: 3},
         {name: 'Adobe Photoshop', level: 2},
-        {name: 'Adobe Illustrator', level: 3},
-        {name: 'Adobe InDesign', level: 2},
-        {name: 'Adobe XD', level: 4},
-        {name: 'Japanese', level: 5},
-        {name: 'English', level: 4},
+        {name: 'Adobe InDesign', level: 1},
         {name: 'HTML',level: 3},
         {name: 'CSS', level: 3},
         {name: 'JavaScript', level: 2},
+				{name: 'Python', level: 1},
+				{name: 'MySQL', level: 1},
+				{name: 'Japanese', level: 5},
+        {name: 'English', level: 4},
       ],
 			links:[
 				{
-					name:'Wantedly',
-					icon:'el-icon-user',
-					url:'https://www.wantedly.com/secret_profiles/1h8Wm5W3Bo-i1Ok2u_aFIV_b2uy1eFz9'
+					name:'Email',
+					icon:'el-icon-message',
+					url:'mailto:mariniida114@gmail.com'
 				},
 				{
 					name:'indeed Resume',
 					icon:'el-icon-download',
 					url:'https://my.indeed.com/p/69cw2g1'
 				}],
-				Github:{
+			marks:[
+				{
 						name:'Github',
-						icon:require("../assets/GitHub-Mark-32px.png"),
-						url:'https://github.com/mariniida'
-				}
+						icon:require("../assets/GitHub-Mark-64px.png"),
+						url:'https://github.com/mariniida',
+				},
+				{
+					name:'Wantedly',
+					icon:require("../assets/wantedly_mark.png"),
+					url:'https://www.wantedly.com/secret_profiles/1h8Wm5W3Bo-i1Ok2u_aFIV_b2uy1eFz9'
 
+				}
+			],
     }
   },
-    }
+}
 </script>
-
 <style scoped>
 
-
-.description{
+.description {
 	width: 500px;
 	text-align: left;
 }
 
-.box{
+.box {
   display: inline-block;
 }
 
-.lineButtom{
+.lineButtom {
   position: relative;
   display: inline-block;
   height: 70px;
   line-height: 70px;
 }
 
-.lineButtom::after{
+.lineButtom::after {
   content: '';
   position: absolute;
   left: 0;
@@ -178,53 +182,83 @@ export default {
   background-color: #707070;
 }
 
-.event{
+.event {
   padding-left: 18px;
   padding-top: 8px;
 }
 
-.right{
+.right {
   flex-basis: 300px;
   text-align: left;
   margin-top: 40px;
 }
 
-.left{
+.left {
   flex-basis: 150px;
 }
 
-.darkSquare{
+.darkSquare {
   background-color: #3550B2;
   height: 1.75em;
   width: 1.75em;
   margin: 5px;
 }
 
-.lightSquare{
+.lightSquare {
   background-color: #b9c4ed;
   height: 1.75em;
   width: 1.75em;
   margin: 5px;
 }
 
-a:-webkit-any-link {
-    color: #3550B2;
-		text-decoration: none;
+.links a {
+	color: #333333;
+	font-size: 1.75em;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+.links a:hover {
+	cursor: pointer;
+	transition: .1s;
+	color: #3550B2;
+}
+
+.links img:hover {
+	filter: drop-shadow(1px 1px  3px #b9c4ed);
+	cursor: pointer;
+	transition: .1s;
+}
+
+.links i {
+	margin: 6px;
+	padding-left: 6px;
 }
 
 
-.margin60{
+.mark {
+	width: 32px;
+	height: 32px;
+	margin: 6px;
+}
+
+.marks {
+	display:inline-block;
+}
+
+.margin60 {
 	margin: 60px 0px;
 }
 
-.skillBox{
+.skillBox {
 	width: 190px;
 }
 
-@media screen and (max-width:480px){
+@media screen and (max-width:480px) {
   /*画面幅が480pxまでの時*/
   .display-none{
       display:none;
   }
 }
+
 </style>
