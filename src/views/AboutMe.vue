@@ -92,9 +92,8 @@ export default {
       profile: {
         tagLine: "I'm Marin Iida.",
         bio: "An aspiring UI/UX designer based in Japan (for now).",
-        img: require("../assets/IMG_0487.jpg"),
+        img: require("../assets/IMG_2338.jpg"),
       },
-      profileImg: require("../assets/IMG_2338.jpg"),
       timelineEvents: [
         {
           startDate: '2012 Feb',

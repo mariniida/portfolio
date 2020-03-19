@@ -11,6 +11,7 @@
   "dependencies": {
     "element-ui": "^2.13.0",
     "express": "^4.17.1",
+    "js-yaml": "^3.13.1",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
     "prismic-vue": "^2.0.0",
