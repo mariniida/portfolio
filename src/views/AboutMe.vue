@@ -2,7 +2,7 @@
   <div class="page width80">
 
 		<!--Profile section-->
-    <div class="section flexContainer tileContainer">
+    <div class="section flexContainer tileContainer alignEnd">
 
       <el-image class="flexItem"
        style="width: 300px; height: 450px"
@@ -24,20 +24,26 @@
 
 				<div class="links">
 					<h2>Links</h2>
-					<li v-for="(link, index) in links">
-						<a target="_blank"
-						rel="noopener noreferrer"
-						:href="link.url">
-							<i :class="link.icon"></i>{{link.name}}
-						</a>
-					</li>
-					<li v-for="(mark, index) in marks" class="marks">
-						<a target="_blank"
-						rel="noopener noreferrer"
-						:href="mark.url">
-								<img class="mark" :src="mark.icon">
-						</a>
-					</li>
+					<div class="flexContainer">
+						<div class="flexItem">
+						<li v-for="(link, index) in links">
+							<a target="_blank"
+							rel="noopener noreferrer"
+							:href="link.url">
+								<i :class="link.icon"></i>{{link.name}}
+							</a>
+						</li>
+					</div>
+					<div class="flexItem">
+						<li v-for="(mark, index) in marks" class="marks">
+							<a target="_blank"
+							rel="noopener noreferrer"
+							:href="mark.url">
+									<img class="mark" :src="mark.icon">
+							</a>
+						</li>
+					</div>
+					</div>
 				</div>
       </div>
 
@@ -53,6 +59,7 @@
             <h5 class=lineButtom>{{timelineEvent.startDate}}</h5>
             <h5>{{timelineEvent.endDate}}</h5>
           </div>
+
           <div class="flexItem right links">
             <a :href="timelineEvent.link" target="_blank"><h2>{{timelineEvent.heading}}</h2></a>
             <div class="event">
@@ -130,7 +137,7 @@ export default {
 					url:'mailto:mariniida114@gmail.com'
 				},
 				{
-					name:'indeed Resume',
+					name:'Indeed',
 					icon:'el-icon-download',
 					url:'https://my.indeed.com/p/69cw2g1'
 				}],
@@ -234,6 +241,14 @@ export default {
 	padding-left: 6px;
 }
 
+.links .flexContainer{
+	justify-content: flex-start;
+}
+
+.links li{
+	margin: 6px;
+}
+
 
 .mark {
 	width: 32px;
@@ -258,6 +273,10 @@ export default {
   .display-none{
       display:none;
   }
+}
+
+.alignEnd{
+	align-items: flex-end
 }
 
 </style>
