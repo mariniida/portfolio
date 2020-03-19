@@ -1,15 +1,15 @@
 <template>
   <div>
 		<div class="landingSection flexContainer tileContainer">
+
 			<el-image class="flexItem"
-			 style="width: 500px; height: 570px"
 			 :src="profile.img" fit="cover">
 				 <div slot="placeholder">
 					 <h4 class="slottext">Loading...</h4>
 				 </div>
 			</el-image>
 
-			<div class="flexItem">
+			<div class="flexItem LPtext">
 				<h1>Hi, there. {{profile.tagLine}}</h1>
 				<h3>{{profile.bio}}</h3>
 			</div>
@@ -35,8 +35,17 @@ export default {
 </script>
 
 <style scoped>
-.landingSection{
-	margin: 20px 0px;
+.landingSection {
+	margin: 20px 0px 60px 0px;
+}
+
+.el-image{
+	width: 350px;
+	height: 400px;
+}
+
+.LPtext{
+	padding: 20px;
 }
 
 </style>

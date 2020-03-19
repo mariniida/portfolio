@@ -28,14 +28,15 @@ export default {
   display: block;
   text-align: center;
   font-style: italic;
-  font-size: 14px;
+  font-size: 1.5rem;
   color: #949494;
 	margin-bottom: 5rem;
 }
 
-.imgCaption{
-	max-height: 500px;
-    object-fit: contain;
+.imgCaption {
+	max-width: 500px;
+  object-fit: contain;
+	margin: 0 auto;
 }
 
 

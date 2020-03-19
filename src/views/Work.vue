@@ -3,7 +3,7 @@
 			<h1>{{$prismic.richTextAsPlain(work.title)}}</h1>
 			<p>{{work.tag}}: {{$prismic.richTextAsPlain(work.tool)}}</p>
 
-			<div class="subsection">
+			<div id="prismic" class="subsection">
 		    <div class="flexContainer tileContainer">
 					<el-image class="flexItem halfWidth"
 		        :src="work.landingImg.url"
@@ -13,7 +13,7 @@
 						</div>
 					</el-image>
 					<div class="flexItem section description">
-			      <prismic-rich-text class="textLeft " :field="work.description"/>
+			      <prismic-rich-text class="textLeft" :field="work.description"/>
 					</div>
 				</div>
 			</div>

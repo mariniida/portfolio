@@ -102,10 +102,6 @@ export default {
   margin: 0 auto;
 }
 
-.alignLeft {
-  text-align: left;
-}
-
 .noAlign {
   align-items: flex-start;
   flex-wrap: wrap;
@@ -147,7 +143,19 @@ export default {
 	width: 14px;
 	height: 14px;
 	 display: inline-block;
+}
 
+.el-button {
+	margin: 5px !important;
+	border: 1px solid #3550B2 !important;
+	color: #3550B2 !important;
+}
+
+.el-button:hover {
+	border: 1px solid #3550B2 !important;
+	color: white !important;
+	background: #3550B2 !important;
+	cursor: pointer;
 }
 
 </style>
