@@ -36,15 +36,15 @@ export default {
 
 <style scoped>
 .landingSection {
-	margin: 20px 0px 60px 0px;
+	margin: 60px 0px;
 }
 
-.el-image{
+.el-image {
 	width: 350px;
 	height: 400px;
 }
 
-.LPtext{
+.LPtext {
 	padding: 20px;
 }
 
