@@ -1,29 +1,32 @@
 <template>
   <div class="page">
-<!--
-    <el-tabs  tabPosition="top">
-    Planning to include a filtering function based on the type of work
+	    <ul class="tab">
+				<li v-bind:class="{'active': active == 'Recommended'}"
+				class="navItem" @click=getRecommendedWorks() >
+					オススメ</li>
+				<li v-bind:class="{'active': active === 'All'}" class="navItem" @click=getAllWorks()>All</li>
+	    	<li v-bind:class="{'active': active === workType }" class="navItem"
+	        v-for="(workType, index) in workTypes"
+	        :key="index" :label="workType" :name="workType"
+					@click=getSpecificWorks(workType)>{{workType}}</li>
+	      </ul>
 
-    <el-tab-pane
-        v-for="(workType, index) in workTypes"
-        :key="index"
-        :label="workType"
-        :name="workType">{{workType}}</el-tab-pane>
-      </el-tabs>
--->
       <div v-loading.fullscreen="loading" class="section flexContainer tileContainer">
-          <div class="thumbnail flexItem"v-for="(work, index) in works" >
-            <router-link :to="linkResolver(work)">
-              <div class="thumbnail-overlay"></div>
-                <img class="thumbnail-image"
-                style="width: 300px; height: 300px"
-                :src="work.data.thumbnail.url">
-                <div class="thumbnail-details fadeIn-top">
-                  <h4>{{$prismic.richTextAsPlain(work.data.title)}}</h4>
-                  <p>{{work.data.tag}}</p>
-                </div>
-            </router-link>
-          </div>
+					<div v-if="!displayWorks.length" class="section">
+						<h3 class="slotText ">No work to display in this category...</h3>
+					</div>
+          	<div v-for="(work, index) in displayWorks" class="thumbnail flexItem" >
+	            <router-link :to="linkResolver(work)">
+	              <div class="thumbnail-overlay"></div>
+	                <img class="thumbnail-image"
+	                style="width: 300px; height: 300px"
+	                :src="work.data.thumbnail.url">
+	                <div class="thumbnail-details fadeIn-top">
+	                  <h4>{{$prismic.richTextAsPlain(work.data.title)}}</h4>
+	                  <p>{{work.data.tag}}</p>
+	                </div>
+	            </router-link>
+						</div>
       </div>
   </div>
 </template>
@@ -34,27 +37,55 @@ export default {
   data () {
     return {
       workTypes:[
-        'All','Graphics','UI/UX','Branding'
+				'Graphic','UI/UX','Branding', 'Coding','Game Design', 'Crafting', 'Other'
       ],
       documentId: '',
-      works: [],
+      allWorks: [],
+			displayWorks: [],
       loading: true,
-      linkResolver: this.$prismic.linkResolver
+      linkResolver: this.$prismic.linkResolver,
+			active: 'All'
     }
   },
   methods: {
     getAllWorks() {
+			this.loading = true;
       this.$prismic.client.query(
         this.$prismic.Predicates.at('document.type', 'work'),
-        { orderings : '[document.first_publication_date]'}
+        { orderings : '[document.last_publication_date]'}
         ).then((response) => {
-          this.works = response.results;
-          this.loading=false;
+          this.allWorks = response.results;
+					this.displayWorks = response.results;
+          this.loading = false;
+					this.active = 'All';
         });
+    },
+		getSpecificWorks(tag) {
+			this.loading = true;
+      this.$prismic.client.query([
+				this.$prismic.Predicates.at('document.type', 'work'),
+			  this.$prismic.Predicates.at('my.work.tag', tag)
+			]).then((response) => {
+          this.displayWorks = response.results;
+          this.loading = false;
+					this.active = tag;
+      });
+    },
+		getRecommendedWorks(tag) {
+			this.loading = true;
+      this.$prismic.client.query([
+				this.$prismic.Predicates.at('document.type', 'work'),
+			  this.$prismic.Predicates.at('document.tags', ['Recommended'])
+			]).then((response) => {
+          this.displayWorks = response.results;
+          this.loading = false;
+					this.active = 'Recommended';
+      });
     },
   },
   created () {
-    this.getAllWorks();
+  this.getAllWorks();
+
   },
   beforeRouteUpdate (to, from, next) {
     this.getContent(to.params.uid);
@@ -64,6 +95,22 @@ export default {
 </script>
 
 <style>
+
+.tab li{
+	font-size: 1.5rem;
+	margin: 0.9rem;
+	padding: 2px;
+	line-height: 1.5rem;
+}
+
+.tab li:hover{
+	cursor: pointer;
+}
+
+.tab li:hover, .tab li.active {
+	color: #3550B2;
+	transition: 0.1s;
+}
 
 .thumbnail {
   position: relative;
@@ -89,7 +136,7 @@ export default {
   opacity: 1;
 }
 
-.thumbnail-image{
+.thumbnail-image {
   width: 100%;
   object-fit: contain;
 }
@@ -111,24 +158,24 @@ export default {
   transition: all 0.3s ease-in-out 0s;
 }
 
-.thumbnail:hover .thumbnail-details{
+.thumbnail:hover .thumbnail-details {
   top: 50%;
   left: 50%;
   opacity: 1;
 }
 
-.thumbnail-details h4{
+.thumbnail-details h4 {
   color: #fff;
   letter-spacing: 0.15em;
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
-.thumbnail-details p{
+.thumbnail-details p {
   color: #fff;
 }
 
-.fadeIn-top{
+.fadeIn-top {
   top: 20%;
 }
 </style>
