@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: { path: '/work' }
+      redirect: { path: '/landing' }
     },
     {
       path: '*',
