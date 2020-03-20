@@ -1,7 +1,7 @@
 <template>
 	<nav>
 	 <router-link to="/landing" class="navItem navLogo">
-		 <img src="../../static/logo.png">
+		 <!--<img src="../../static/logo.png">-->
 	 </router-link>
 		<ul>
         <router-link tag="li"  to="/work" exact>
