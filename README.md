@@ -1,6 +1,6 @@
-# portfolio
+# portfolio.
 
-> Marin's portfolio website
+> A Vue.js project
 
 ## Build Setup
 
