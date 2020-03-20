@@ -1,9 +1,7 @@
 <template>
   <div class="page width80">
-
 		<!--Profile section-->
     <div class="section flexContainer tileContainer alignEnd">
-
       <el-image class="flexItem"
        style="width: 300px; height: 450px"
        :src="profile.img" fit="cover">
