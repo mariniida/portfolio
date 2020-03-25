@@ -14,7 +14,6 @@ import htmlSerializer from './html-serializer';
 
 const accessToken = 'MC5YbDVLQ3hJQUFDSUFObXlK.FwsU77-9Ae-_vRfvv71xYe-_vVplYu-_vRPvv70z77-9DmLvv70577-9Z3dE77-977-9YD17';
 
-
 Vue.use(ElementUI,{
   locale
 });
@@ -22,10 +21,9 @@ Vue.use(ElementUI,{
 Vue.use(PrismicVue,{
   endpoint: window.prismic.endpoint,
   linkResolver,
-  htmlSerializer,
+  htmlSerializer: htmlSerializer,
   apiOptions: { accessToken }
 });
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
